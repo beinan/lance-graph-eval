@@ -124,20 +124,22 @@ queries:
   - name: local_search_2hop
     tags: [local, traversal]
     params:
-      entity_name: "diabetes"
+      entity_name: "About"
     expect:
       min_rows: 1
     fetch: scalar
     texts:
       neo4j: |
-        CALL db.index.fulltext.queryNodes('entity_name', $entity_name) YIELD node
-        MATCH (node)<-[:MENTIONS]-(c:Chunk)-[:PARENT_OF]->(d:Document)
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})
+        MATCH (c)-[:PARENT_OF]->(d:Document)
         RETURN count(*) AS n
       kuzu: |
-        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})-[]->(n)
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})
+        MATCH (c)-[:PARENT_OF]->(d:Document)
         RETURN count(*) AS n
       lance_graph: |
-        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})-[]->(n)
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})
+        MATCH (c)-[:PARENT_OF]->(d:Document)
         RETURN count(*) AS n
   - name: parent_child_enrichment
     tags: [context, parent]
