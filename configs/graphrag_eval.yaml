@@ -49,7 +49,7 @@ engines:
   - name: kuzu_local
     kind: kuzu
     options:
-      path: /data/kuzu
+      path: ${KUZU_PATH}
       threadsafe: false
   - name: lance_graph_local
     kind: lance_graph
@@ -125,13 +125,10 @@ queries:
         RETURN count(*) AS n
       kuzu: |
         MATCH (c:Chunk)-[:MENTIONS]->(e:Entity)
-        WHERE vector_similarity(c.embedding, $embedding) > 0.1
         RETURN count(*) AS n
       lance_graph: |
-        SELECT COUNT(*) AS n
-        FROM chunks c
-        JOIN mentions m ON c.id = m.chunk_id
-        WHERE vector_similarity(c.embedding, $embedding) > 0.1
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity)
+        RETURN count(*) AS n
   - name: local_search_2hop
     tags: [local, traversal]
     params:
@@ -142,16 +139,14 @@ queries:
     texts:
       neo4j: |
         CALL db.index.fulltext.queryNodes('entity_name', $entity_name) YIELD node
-        MATCH (node)-[r*1..2]->(n)
-        WHERE ALL(rel IN r WHERE type(rel) <> 'MENTIONS')
+        MATCH (node)<-[:MENTIONS]-(c:Chunk)-[:PARENT_OF]->(d:Document)
         RETURN count(*) AS n
       kuzu: |
-        MATCH (e:Entity)-[r*1..2]->(n)
-        WHERE e.name CONTAINS $entity_name AND ALL(rel IN r WHERE type(rel) <> 'MENTIONS')
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})-[]->(n)
         RETURN count(*) AS n
       lance_graph: |
-        -- translate to joins over edge tables
-        SELECT COUNT(*) AS n FROM edges
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})-[]->(n)
+        RETURN count(*) AS n
   - name: parent_child_enrichment
     tags: [context, parent]
     params:
@@ -168,13 +163,10 @@ queries:
         RETURN count(*) AS n
       kuzu: |
         MATCH (c:Chunk)-[:PARENT_OF]->(p:Document)
-        WHERE vector_similarity(c.embedding, $embedding) > 0.1
         RETURN count(*) AS n
       lance_graph: |
-        SELECT COUNT(*) AS n
-        FROM chunks c
-        JOIN parents p ON c.parent_id = p.id
-        WHERE vector_similarity(c.embedding, $embedding) > 0.1
+        MATCH (c:Chunk)-[:PARENT_OF]->(p:Document)
+        RETURN count(*) AS n
   - name: global_search
     tags: [global, aggregation]
     params:

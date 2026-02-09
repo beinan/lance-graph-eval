@@ -69,6 +69,16 @@ def _resolve_params(params: Dict[str, object]) -> Dict[str, object]:
     return resolved
 
 
+def _filter_params_for_query(query_text: str, params: Dict[str, object]) -> Dict[str, object]:
+    if not params:
+        return {}
+    used = {}
+    for key, value in params.items():
+        if f"${key}" in query_text:
+            used[key] = value
+    return used
+
+
 def _check_expect(row_count: Optional[float], expect: Dict[str, object]) -> (Optional[bool], Optional[str]):
     if not expect:
         return None, None
@@ -165,6 +175,7 @@ class BenchmarkRunner:
 
     def _run_query_suite(self, engine, engine_cfg: EngineConfig, query: QuerySpec, query_text: str) -> QueryReport:
         params = _resolve_params(query.params)
+        params = _filter_params_for_query(query_text, params)
         expect = query.expect
 
         for _ in range(self.settings.warmups):

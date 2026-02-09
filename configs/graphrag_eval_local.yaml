@@ -7,155 +7,181 @@ benchmark:
   seed: 42
   output_dir: results
   metadata:
-    cache_policy: warm cache after warmups; no manual cache drops
+    cache_policy: "warm cache after warmups; no manual cache drops"
     vector_dimension: 32
     distance_metric: cosine
     index_params:
       neo4j:
-        index: vector
+        index: "vector"
         params:
           vector.dimensions: 32
           vector.similarity_function: cosine
       kuzu:
-        index: hnsw
+        index: "hnsw"
         params:
           m: 16
           ef_construction: 200
           ef_search: 100
       lance_graph:
-        index: ivf_pq
+        index: "ivf_pq"
         params:
           nlist: 1024
           pq_m: 16
           nprobe: 32
+
 datasets:
-- name: graphrag_bench_medical
-  path: /home/user/p/lance-graph-eval/datasets/graph/graphrag_bench_medical
-  notes: Converted from GraphRAG-Bench medical corpus
+  - name: graphrag_bench_medical
+    path: ${GRAPHRAG_MEDICAL_PATH}
+    notes: "Populate schema: Document, Chunk, Entity, Community; edges: HAS_CHUNK, MENTIONS, PARENT_OF"
+  - name: graphrag_bench_novel
+    path: ${GRAPHRAG_NOVEL_PATH}
+    notes: "Long-form narrative with chapter-level parent nodes"
+
 engines:
-- name: kuzu_local
-  kind: kuzu
-  options:
-    path: /home/user/p/lance-graph-eval/datasets/kuzu_medical.db
-    threadsafe: false
-- name: lance_graph_local
-  kind: lance_graph
-  options:
-    mode: datasets
-    datasets_dir: /home/user/p/lance-graph-eval/datasets/graph/graphrag_bench_medical/parquet
-    tables:
-      Document: documents.parquet
-      Chunk: chunks.parquet
-      Entity: entities.parquet
-      Community: communities.parquet
-      edges: edges.parquet
-    graph:
-      nodes:
-      - label: Document
-        id_field: id
-      - label: Chunk
-        id_field: id
-      - label: Entity
-        id_field: id
-      - label: Community
-        id_field: id
-      relationships:
-      - name: HAS_CHUNK
-        src_field: src_id
-        dst_field: dst_id
-        from_edges: edges
-      - name: MENTIONS
-        src_field: src_id
-        dst_field: dst_id
-        from_edges: edges
-      - name: PARENT_OF
-        src_field: src_id
-        dst_field: dst_id
-        from_edges: edges
-    threadsafe: false
-setup: []
+  - name: neo4j_local
+    kind: neo4j
+    options:
+      uri: bolt://localhost:7687
+      user: neo4j
+      password: neo4j_password
+      database: neo4j
+      threadsafe: true
+  - name: kuzu_local
+    kind: kuzu
+    options:
+      path: ${KUZU_PATH}
+      threadsafe: false
+  - name: lance_graph_local
+    kind: lance_graph
+    options:
+      mode: datasets
+      datasets_dir: ${GRAPHRAG_LANCE_DATASETS}
+      tables:
+        Document: documents.parquet
+        Chunk: chunks.parquet
+        Entity: entities.parquet
+        Community: communities.parquet
+        edges: edges.parquet
+      graph:
+        nodes:
+          - label: Document
+            id_field: id
+          - label: Chunk
+            id_field: id
+          - label: Entity
+            id_field: id
+          - label: Community
+            id_field: id
+        relationships:
+          - name: HAS_CHUNK
+            src_field: src_id
+            dst_field: dst_id
+            from_edges: edges
+          - name: MENTIONS
+            src_field: src_id
+            dst_field: dst_id
+            from_edges: edges
+          - name: PARENT_OF
+            src_field: src_id
+            dst_field: dst_id
+            from_edges: edges
+      threadsafe: false
+
+setup:
+  - name: vector_index
+    per_engine:
+      neo4j: |
+        CREATE VECTOR INDEX chunk_embedding IF NOT EXISTS
+        FOR (c:Chunk) ON (c.embedding)
+        OPTIONS {indexConfig: {`vector.dimensions`: 32, `vector.similarity_function`: 'cosine'}}
+      kuzu: |
+        CREATE INDEX chunk_embedding ON Chunk(embedding) USING HNSW;
+      lance_graph: |
+        -- create IVF-PQ index via lance-graph tooling
+  - name: fulltext_index
+    per_engine:
+      neo4j: |
+        CREATE FULLTEXT INDEX entity_name IF NOT EXISTS
+        FOR (e:Entity) ON EACH [e.name]
+      kuzu: |
+        -- create fulltext index via kuzu tooling
+      lance_graph: |
+        -- create fulltext index via lance-graph tooling
+
 queries:
-- name: hybrid_search
-  tags:
-  - hybrid
-  - vector
-  - traversal
-  params: {}
-  expect:
-    min_rows: 1
-  fetch: scalar
-  texts:
-    neo4j: 'CALL db.index.vector.queryNodes(''chunk_embedding'', $top_k, $embedding)
-
-      YIELD node, score
-
-      MATCH (node)-[:MENTIONS]->(e:Entity)
-
-      RETURN count(*) AS n
-
-      '
-    kuzu: MATCH (c:Chunk)-[:MENTIONS]->(e:Entity) RETURN count(*) AS n
-    lance_graph: MATCH (c:Chunk)-[:MENTIONS]->(e:Entity) RETURN count(*) AS n
-- name: local_search_2hop
-  tags:
-  - local
-  - traversal
-  params:
-    entity_name: About
-  expect:
-    min_rows: 1
-  fetch: scalar
-  texts:
-    neo4j: 'CALL db.index.fulltext.queryNodes(''entity_name'', $entity_name) YIELD
-      node
-
-      MATCH (node)-[r*1..2]->(n)
-
-      WHERE ALL(rel IN r WHERE type(rel) <> ''MENTIONS'')
-
-      RETURN count(*) AS n
-
-      '
-    kuzu: 'MATCH (e:Entity {name: $entity_name})<-[:MENTIONS]-(c:Chunk)-[:PARENT_OF]->(d:Document)
-      RETURN count(*) AS n'
-    lance_graph: 'MATCH (e:Entity {name: $entity_name})<-[:MENTIONS]-(c:Chunk)-[:PARENT_OF]->(d:Document)
-      RETURN count(*) AS n'
-- name: parent_child_enrichment
-  tags:
-  - context
-  - parent
-  params: {}
-  expect:
-    min_rows: 1
-  fetch: scalar
-  texts:
-    neo4j: 'CALL db.index.vector.queryNodes(''chunk_embedding'', $top_k, $embedding)
-
-      YIELD node
-
-      MATCH (node)-[:PARENT_OF]->(p:Document)
-
-      RETURN count(*) AS n
-
-      '
-    kuzu: MATCH (c:Chunk)-[:PARENT_OF]->(p:Document) RETURN count(*) AS n
-    lance_graph: MATCH (c:Chunk)-[:PARENT_OF]->(p:Document) RETURN count(*) AS n
-- name: global_search
-  tags:
-  - global
-  - aggregation
-  params:
-    level: 1
-  expect:
-    min_rows: 1
-  fetch: scalar
-  texts:
-    neo4j: 'MATCH (c:Community {level: $level})
-
-      RETURN count(*) AS n
-
-      '
-    kuzu: 'MATCH (c:Community {level: $level}) RETURN count(*) AS n'
-    lance_graph: 'MATCH (c:Community {level: $level})
-
-      RETURN count(*) AS n'
+  - name: hybrid_search
+    tags: [hybrid, vector, traversal]
+    params:
+      embedding_file: ${EMBEDDING_JSON}
+      top_k: 10
+    expect:
+      min_rows: 1
+    fetch: scalar
+    texts:
+      neo4j: |
+        CALL db.index.vector.queryNodes('chunk_embedding', $top_k, $embedding)
+        YIELD node, score
+        MATCH (node)-[:MENTIONS]->(e:Entity)
+        RETURN count(*) AS n
+      kuzu: |
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity)
+        RETURN count(*) AS n
+      lance_graph: |
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity)
+        RETURN count(*) AS n
+  - name: local_search_2hop
+    tags: [local, traversal]
+    params:
+      entity_name: "diabetes"
+    expect:
+      min_rows: 1
+    fetch: scalar
+    texts:
+      neo4j: |
+        CALL db.index.fulltext.queryNodes('entity_name', $entity_name) YIELD node
+        MATCH (node)<-[:MENTIONS]-(c:Chunk)-[:PARENT_OF]->(d:Document)
+        RETURN count(*) AS n
+      kuzu: |
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})-[]->(n)
+        RETURN count(*) AS n
+      lance_graph: |
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})-[]->(n)
+        RETURN count(*) AS n
+  - name: parent_child_enrichment
+    tags: [context, parent]
+    params:
+      embedding_file: ${EMBEDDING_JSON}
+      top_k: 25
+    expect:
+      min_rows: 1
+    fetch: scalar
+    texts:
+      neo4j: |
+        CALL db.index.vector.queryNodes('chunk_embedding', $top_k, $embedding)
+        YIELD node
+        MATCH (node)-[:PARENT_OF]->(p:Document)
+        RETURN count(*) AS n
+      kuzu: |
+        MATCH (c:Chunk)-[:PARENT_OF]->(p:Document)
+        RETURN count(*) AS n
+      lance_graph: |
+        MATCH (c:Chunk)-[:PARENT_OF]->(p:Document)
+        RETURN count(*) AS n
+  - name: global_search
+    tags: [global, aggregation]
+    params:
+      level: 1
+    expect:
+      min_rows: 1
+    fetch: scalar
+    texts:
+      neo4j: |
+        MATCH (c:Community {level: $level})
+        RETURN count(*) AS n
+      kuzu: |
+        MATCH (c:Community)
+        WHERE c.level = $level
+        RETURN count(*) AS n
+      lance_graph: |
+        MATCH (c:Community {level: $level})
+        RETURN count(*) AS n

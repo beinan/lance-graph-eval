@@ -30,6 +30,34 @@ cp configs/graphrag_eval.yaml configs/local.yaml
 lgeval --config configs/local.yaml --out results
 ```
 
+## Download GraphRAG-Bench data
+
+This repo uses the GraphRAG-Bench corpus JSON files from Hugging Face and converts them into a canonical
+JSONL graph format.
+
+Download the corpus + questions:
+
+```bash
+mkdir -p datasets/raw/graphrag_bench
+curl -L -o datasets/raw/graphrag_bench/medical.json \\
+  https://huggingface.co/datasets/GraphRAG-Bench/GraphRAG-Bench/resolve/main/Datasets/Corpus/medical.json
+curl -L -o datasets/raw/graphrag_bench/novel.json \\
+  https://huggingface.co/datasets/GraphRAG-Bench/GraphRAG-Bench/resolve/main/Datasets/Corpus/novel.json
+curl -L -o datasets/raw/graphrag_bench/medical_questions.json \\
+  https://huggingface.co/datasets/GraphRAG-Bench/GraphRAG-Bench/resolve/main/Datasets/Questions/medical_questions.json
+curl -L -o datasets/raw/graphrag_bench/novel_questions.json \\
+  https://huggingface.co/datasets/GraphRAG-Bench/GraphRAG-Bench/resolve/main/Datasets/Questions/novel_questions.json
+```
+
+Convert to canonical graph JSONL:
+
+```bash
+python3 scripts/convert_graphrag_bench.py --corpus datasets/raw/graphrag_bench/medical.json \\
+  --out datasets/graph/graphrag_bench_medical --embedding-dim 32
+python3 scripts/convert_graphrag_bench.py --corpus datasets/raw/graphrag_bench/novel.json \\
+  --out datasets/graph/graphrag_bench_novel --embedding-dim 32
+```
+
 ## Config overview
 
 - `benchmark`: run settings (runs, warmups, concurrency, timeout)
@@ -37,7 +65,8 @@ lgeval --config configs/local.yaml --out results
 - `setup`: per-engine setup queries (indexes, schema, preload)
 - `queries`: per-engine query texts for each benchmark task
 
-See `configs/graphrag_eval.yaml` for a starting point.
+See `configs/graphrag_eval.yaml` for the single source-of-truth config. The other YAMLs are kept in sync
+as copies for compatibility but are not maintained separately.
 
 ## Dataset format
 
