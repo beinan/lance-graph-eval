@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: lgeval
+Version: 0.1.0
+Summary: GraphRAG benchmark harness for lance-graph, Neo4j, and Kuzu
+Requires-Python: >=3.9
+Requires-Dist: pyyaml>=6.0
+Provides-Extra: neo4j
+Requires-Dist: neo4j==6.1.0; extra == "neo4j"
+Provides-Extra: kuzu
+Requires-Dist: kuzu==0.11.3; extra == "kuzu"
+Provides-Extra: lance-graph
+Requires-Dist: lance-graph==0.5.2; extra == "lance-graph"
+Requires-Dist: pyarrow==23.0.0; extra == "lance-graph"
+Provides-Extra: bench
+Requires-Dist: psutil==7.2.2; extra == "bench"
+Provides-Extra: data
+Requires-Dist: pyarrow==23.0.0; extra == "data"
+Provides-Extra: all
+Requires-Dist: neo4j==6.1.0; extra == "all"
+Requires-Dist: kuzu==0.11.3; extra == "all"
+Requires-Dist: lance-graph==0.5.2; extra == "all"
+Requires-Dist: psutil==7.2.2; extra == "all"
+Requires-Dist: pyarrow==23.0.0; extra == "all"

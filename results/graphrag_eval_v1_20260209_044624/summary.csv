@@ -1,0 +1,13 @@
+engine,query,tags,count,mean_ms,stdev_ms,min_ms,max_ms,p50_ms,p95_ms,p99_ms,errors,expect_failures
+neo4j_local,hybrid_search,"hybrid,vector,traversal",0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,30,0
+neo4j_local,local_search_2hop,"local,traversal",30,4.353,1.748,2.501,8.847,3.797,8.336,8.785,0,0
+neo4j_local,parent_child_enrichment,"context,parent",0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,30,0
+neo4j_local,global_search,"global,aggregation",30,3.400,0.671,2.160,4.657,3.410,4.564,4.638,0,0
+kuzu_local,hybrid_search,"hybrid,vector,traversal",0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,30,0
+kuzu_local,local_search_2hop,"local,traversal",30,2.516,0.895,1.849,4.290,2.006,4.026,4.221,0,30
+kuzu_local,parent_child_enrichment,"context,parent",0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,30,0
+kuzu_local,global_search,"global,aggregation",30,2.094,0.990,1.295,3.647,1.434,3.614,3.639,0,0
+lance_graph_local,hybrid_search,"hybrid,vector,traversal",30,2.726,0.121,2.498,2.927,2.725,2.898,2.922,0,0
+lance_graph_local,local_search_2hop,"local,traversal",30,2.633,0.107,2.416,2.881,2.621,2.792,2.856,0,0
+lance_graph_local,parent_child_enrichment,"context,parent",30,2.427,0.079,2.283,2.613,2.418,2.549,2.600,0,0
+lance_graph_local,global_search,"global,aggregation",0,0.000,0.000,0.000,0.000,0.000,0.000,0.000,30,0

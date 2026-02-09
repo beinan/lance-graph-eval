@@ -1,0 +1,1042 @@
+{"id": "entity_about", "name": "About", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_what", "name": "What", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_how", "name": "How", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_basal", "name": "Basal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bcc", "name": "BCC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_skin", "name": "Skin", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_did", "name": "Did", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_working", "name": "Working", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_epidermis", "name": "Epidermis", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_the", "name": "The", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nccn_patient_guides", "name": "NCCN Patient Guides", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cancer", "name": "Cancer", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_signs", "name": "Signs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_flat", "name": "Flat", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_risk", "name": "Risk", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fair", "name": "Fair", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_people", "name": "People", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_age", "name": "Age", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_but", "name": "But", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_between", "name": "Between", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_see_chapter", "name": "See Chapter", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_treatment", "name": "Treatment", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_recurrence", "name": "Recurrence", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_why", "name": "Why", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_making", "name": "Making", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_you", "name": "You", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_the_nccn_guidelines", "name": "The NCCN Guidelines", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_patients", "name": "Patients", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_see_guide_your", "name": "See Guide Your", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_adrenal", "name": "Adrenal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_adrenocortical", "name": "Adrenocortical", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_this", "name": "This", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_these", "name": "These", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_anatomyoftheadrenalgland_adrenal", "name": "AnatomyoftheAdrenalGland Adrenal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_most", "name": "Most", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cushing", "name": "Cushing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_acc", "name": "ACC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_although", "name": "Although", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_neuroblastoma", "name": "Neuroblastoma", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_however", "name": "However", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_half", "name": "Half", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_others", "name": "Others", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_carney", "name": "Carney", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_familial", "name": "Familial", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fap", "name": "FAP", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hereditary", "name": "Hereditary", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pgl", "name": "PGL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_there", "name": "There", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_testing", "name": "Testing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_test", "name": "Test", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_general", "name": "General", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_keep", "name": "Keep", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_create", "name": "Create", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_make", "name": "Make", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_choose", "name": "Choose", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_consider", "name": "Consider", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_family", "name": "Family", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_some", "name": "Some", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_your", "name": "Your", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ask", "name": "Ask", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_for", "name": "For", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_start", "name": "Start", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_next", "name": "Next", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_write", "name": "Write", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_contrast", "name": "Contrast", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mri", "name": "MRI", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tell", "name": "Tell", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pet", "name": "PET", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_types", "name": "Types", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fdg", "name": "FDG", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_more", "name": "More", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_guide_guide", "name": "Guide Guide", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_biochemical", "name": "Biochemical", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_squamous", "name": "Squamous", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cscc", "name": "CSCC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dermis", "name": "Dermis", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sunlight", "name": "Sunlight", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_scars", "name": "Scars", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_marjolin", "name": "Marjolin", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_actinic", "name": "Actinic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dna", "name": "DNA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_recessive", "name": "Recessive", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_rdeb", "name": "RDEB", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_any", "name": "Any", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lymphoma", "name": "Lymphoma", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chronic", "name": "Chronic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_human", "name": "Human", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hiv", "name": "HIV", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_aids_any", "name": "AIDS Any", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_different", "name": "Different", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_talk", "name": "Talk", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_using", "name": "Using", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cutaneous", "name": "Cutaneous", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_occurs", "name": "Occurs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_rarely", "name": "Rarely", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_can", "name": "Can", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_see_part", "name": "See Part", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_kno", "name": "Kno", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_key", "name": "Key", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_imaging", "name": "Imaging", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_depending", "name": "Depending", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dermatologists", "name": "Dermatologists", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_they", "name": "They", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mohs", "name": "Mohs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_surgical", "name": "Surgical", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_head", "name": "Head", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_radiation", "name": "Radiation", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pharmacists", "name": "Pharmacists", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_geneticists", "name": "Geneticists", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bowen", "name": "Bowen", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_photodynamic", "name": "Photodynamic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pdt", "name": "PDT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_when", "name": "When", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sorilux", "name": "Sorilux", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dovonex", "name": "Dovonex", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_calcipotriene", "name": "Calcipotriene", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_imiquimod", "name": "Imiquimod", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_topical", "name": "Topical", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sun", "name": "Sun", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_surgery_different", "name": "Surgery Different", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_all", "name": "All", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pdema", "name": "PDEMA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_after", "name": "After", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lymph", "name": "Lymph", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sometimes", "name": "Sometimes", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_slnb", "name": "SLNB", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_other", "name": "Other", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_electrons", "name": "Electrons", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_photons", "name": "Photons", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_uses", "name": "Uses", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_side", "name": "Side", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_potential", "name": "Potential", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_targeted", "name": "Targeted", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_egfr", "name": "EGFR", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_inhibiting", "name": "Inhibiting", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_common", "name": "Common", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tiredness", "name": "Tiredness", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nccn", "name": "NCCN", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_clinical", "name": "Clinical", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_informed", "name": "Informed", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_will", "name": "Will", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_placebos", "name": "Placebos", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_finding", "name": "Finding", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_united_states_nccn_cancer_centers_nccn", "name": "United States NCCN Cancer Centers NCCN", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_systemic", "name": "Systemic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_enrolling", "name": "Enrolling", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_location", "name": "Location", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tumors", "name": "Tumors", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tumor", "name": "Tumor", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_that", "name": "That", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_connective", "name": "Connective", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_standard", "name": "Standard", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_curettage", "name": "Curettage", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nicotine", "name": "Nicotine", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_smokefree", "name": "SmokeFree", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_betobaccofree", "name": "BeTobaccoFree", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_otherwise", "name": "Otherwise", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_platinum", "name": "Platinum", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_immunotherapy", "name": "Immunotherapy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_regional_cscc", "name": "Regional CSCC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_testing_treatment_metastatic", "name": "Testing Treatment Metastatic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_know", "name": "Know", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_treatment_surgery", "name": "Treatment Surgery", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_surgery", "name": "Surgery", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_platinumbased", "name": "Platinumbased", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_metastatic", "name": "Metastatic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_steps", "name": "Steps", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_now", "name": "Now", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_because", "name": "Because", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_guide_about_cml", "name": "Guide About CML", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cml", "name": "CML", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nccn_guidelines", "name": "NCCN Guidelines", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_blood", "name": "Blood", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_rbcs", "name": "RBCs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_wbcs", "name": "WBCs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_plts", "name": "PLTs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bcr", "name": "BCR", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ablthis", "name": "ABLThis", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_many", "name": "Many", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_each", "name": "Each", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_questions", "name": "Questions", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_online", "name": "Online", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_enlist", "name": "Enlist", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_another", "name": "Another", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lung", "name": "Lung", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nsclc", "name": "NSCLC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_almost", "name": "Almost", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_kar", "name": "KAR", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_large", "name": "Large", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_stage", "name": "Stage", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_information", "name": "Information", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_learn", "name": "Learn", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chapter_advocate", "name": "Chapter Advocate", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_follow", "name": "Follow", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_planning", "name": "Planning", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_removing", "name": "Removing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_confirming", "name": "Confirming", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_radon_asbestos_arsenic", "name": "Radon Asbestos Arsenic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_coal", "name": "Coal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_inside", "name": "Inside", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_from", "name": "From", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sclc", "name": "SCLC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_screening", "name": "Screening", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hcp", "name": "HCP", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_everyone", "name": "Everyone", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_genes", "name": "Genes", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_without", "name": "Without", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_scientists", "name": "Scientists", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sclcs", "name": "SCLCs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_new", "name": "New", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_oxygen", "name": "Oxygen", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_thoracic", "name": "Thoracic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_except", "name": "Except", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_one", "name": "One", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_food", "name": "Food", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_muscularis", "name": "Muscularis", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tunica", "name": "Tunica", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_upper", "name": "Upper", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_striated", "name": "Striated", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_esophageal", "name": "Esophageal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_eac", "name": "EAC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_adenocarcinomas", "name": "Adenocarcinomas", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_today", "name": "Today", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_north_america", "name": "North America", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_through", "name": "Through", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_before", "name": "Before", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_since", "name": "Since", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_early", "name": "Early", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mychart", "name": "MyChart", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_remember", "name": "Remember", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_guide_hodgkin_lymphoma", "name": "Guide Hodgkin Lymphoma", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pfizer_inc", "name": "Pfizer Inc", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_our", "name": "Our", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nccn_foundation", "name": "NCCN Foundation", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hodgkin", "name": "Hodgkin", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_thymus_after", "name": "Thymus After", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_here", "name": "Here", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_with", "name": "With", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_guide", "name": "Guide", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tumor_the", "name": "Tumor The", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tis", "name": "Tis", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_carcinoma", "name": "Carcinoma", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lymphocytes_non", "name": "Lymphocytes Non", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nhl", "name": "NHL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_not", "name": "Not", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_gcs", "name": "GCs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_grading_the", "name": "Grading The", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_grades", "name": "Grades", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_grade", "name": "Grade", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_two", "name": "Two", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_uncommon", "name": "Uncommon", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pediatric", "name": "Pediatric", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ptfl", "name": "PTFL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_usually", "name": "Usually", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fertility", "name": "Fertility", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_please", "name": "Please", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_guide_general", "name": "Guide General", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_medical", "name": "Medical", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bring", "name": "Bring", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_parts", "name": "Parts", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hard", "name": "Hard", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tongue", "name": "Tongue", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_doi", "name": "DOI", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nonkeratinized", "name": "Nonkeratinized", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_keratinized", "name": "Keratinized", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mouth", "name": "Mouth", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_normally", "name": "Normally", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_scc", "name": "SCC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lips", "name": "Lips", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cell_skin_cancer", "name": "Cell Skin Cancer", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_look", "name": "Look", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pcp", "name": "PCP", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_set", "name": "Set", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tests", "name": "Tests", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_physical", "name": "Physical", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_during", "name": "During", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_check", "name": "Check", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_listen", "name": "Listen", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_support", "name": "Support", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dealing", "name": "Dealing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_distress", "name": "Distress", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nutrition", "name": "Nutrition", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_speech", "name": "Speech", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_menstruation", "name": "Menstruation", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_therefore", "name": "Therefore", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_consult", "name": "Consult", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_those", "name": "Those", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cat", "name": "CAT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_also", "name": "Also", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_inflammation", "name": "Inflammation", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ultrasound", "name": "Ultrasound", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_panoramic", "name": "Panoramic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_panorex", "name": "Panorex", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_smoking", "name": "Smoking", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cdc", "name": "CDC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_biopsy", "name": "Biopsy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_biomarker", "name": "Biomarker", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cps", "name": "CPS", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ent", "name": "ENT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_results", "name": "Results", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_often", "name": "Often", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_take", "name": "Take", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_has", "name": "Has", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_where", "name": "Where", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_does", "name": "Does", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pathologic", "name": "Pathologic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_anyone", "name": "Anyone", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_locoregional", "name": "Locoregional", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_moderately", "name": "Moderately", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_see_guide_tumor", "name": "See Guide Tumor", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_depth", "name": "Depth", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_very", "name": "Very", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_regional", "name": "Regional", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_aml", "name": "AML", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_subtypes", "name": "Subtypes", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_once", "name": "Once", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_copyright", "name": "Copyright", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chapter", "name": "Chapter", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_apl", "name": "APL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pml", "name": "PML", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_rara", "name": "RARA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_aml_overview_general", "name": "AML Overview General", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_performance", "name": "Performance", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_instead", "name": "Instead", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_possible", "name": "Possible", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_guide_information", "name": "Guide Information", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_complete", "name": "Complete", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_anc", "name": "ANC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_blasts", "name": "Blasts", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_comprehensive", "name": "Comprehensive", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cmp", "name": "CMP", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_creatinine_creatinine", "name": "Creatinine Creatinine", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dying", "name": "Dying", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ldh", "name": "LDH", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fastgrowing", "name": "Fastgrowing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_liver", "name": "Liver", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lfts", "name": "LFTs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dic", "name": "DIC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hla", "name": "HLA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_adolescent", "name": "Adolescent", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bone", "name": "Bone", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_flow", "name": "Flow", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_immunophenotyping_immunophenotyping", "name": "Immunophenotyping Immunophenotyping", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_certain", "name": "Certain", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chromosomes", "name": "Chromosomes", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_deletion", "name": "Deletion", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_insertion", "name": "Insertion", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_inversion", "name": "Inversion", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_switching", "name": "Switching", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_leukemia", "name": "Leukemia", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_biological", "name": "Biological", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_normal", "name": "Normal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ngs", "name": "NGS", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_while", "name": "While", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_brain", "name": "Brain", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_qtc", "name": "QTc", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_echocardiogram", "name": "Echocardiogram", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lumbar", "name": "Lumbar", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mdt", "name": "MDT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_get", "name": "Get", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_preferred", "name": "Preferred", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cycles", "name": "Cycles", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ara", "name": "Ara", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_standard_high", "name": "Standard High", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hidac", "name": "HiDAC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_intermediate_low", "name": "Intermediate Low", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_gemtuzumab", "name": "Gemtuzumab", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_less", "name": "Less", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_low", "name": "Low", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_carcinosarcoma", "name": "Carcinosarcoma", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mullerian", "name": "Mullerian", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_clear", "name": "Clear", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ovarian", "name": "Ovarian", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_began", "name": "Began", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_occur", "name": "Occur", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_are", "name": "Are", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pap", "name": "Pap", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ultrasounds", "name": "Ultrasounds", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_getting", "name": "Getting", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tissue", "name": "Tissue", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_genetic", "name": "Genetic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_brca", "name": "BRCA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nutritional", "name": "Nutritional", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_symptoms", "name": "Symptoms", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cbc", "name": "CBC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_red", "name": "Red", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_high", "name": "High", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_health", "name": "Health", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mutations", "name": "Mutations", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ntrk", "name": "NTRK", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_remove", "name": "Remove", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_uso", "name": "USO", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_laparoscopy", "name": "Laparoscopy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hysterectomy", "name": "Hysterectomy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_samples", "name": "Samples", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_preparing", "name": "Preparing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_premature", "name": "Premature", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hot", "name": "Hot", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sleeping", "name": "Sleeping", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_night", "name": "Night", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_having", "name": "Having", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_paclitaxel", "name": "Paclitaxel", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_maintenance", "name": "Maintenance", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_staging_the", "name": "Staging The", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chemotherapy_chemotherapy", "name": "Chemotherapy Chemotherapy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_carboplatin", "name": "Carboplatin", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_six", "name": "Six", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_stages", "name": "Stages", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chemotherapy", "name": "Chemotherapy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_monitoring", "name": "Monitoring", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_intraperitoneal", "name": "Intraperitoneal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_parp", "name": "PARP", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_rare", "name": "Rare", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mds", "name": "MDS", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hrd", "name": "HRD", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_observation", "name": "Observation", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_survivorship", "name": "Survivorship", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_non", "name": "Non", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hypersensitivity", "name": "Hypersensitivity", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_patients_immunotherapy_side_effects", "name": "Patients Immunotherapy Side Effects", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_immune_checkpoint_inhibitors", "name": "Immune Checkpoint Inhibitors", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pharynx", "name": "Pharynx", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_larynx", "name": "Larynx", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_esophagus", "name": "Esophagus", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_trachea", "name": "Trachea", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_middle", "name": "Middle", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_space", "name": "Space", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hpv", "name": "HPV", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_feel", "name": "Feel", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hearing", "name": "Hearing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_being", "name": "Being", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_changes", "name": "Changes", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_preventing", "name": "Preventing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_interact", "name": "Interact", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fiberoptic", "name": "Fiberoptic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_laryngoscopy", "name": "Laryngoscopy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_esophagoscopy", "name": "Esophagoscopy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bronchoscopy_during", "name": "Bronchoscopy During", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bronchoscopy", "name": "Bronchoscopy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_biopsies", "name": "Biopsies", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cnb", "name": "CNB", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_metastasis", "name": "Metastasis", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_msi", "name": "MSI", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_microsatellites", "name": "Microsatellites", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mmr", "name": "MMR", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tmb", "name": "TMB", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_staging", "name": "Staging", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_throat", "name": "Throat", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hpvrelated", "name": "HPVrelated", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_numbered", "name": "Numbered", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tnm", "name": "TNM", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_acute", "name": "Acute", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_use", "name": "Use", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lbl", "name": "LBL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_acute_lymphoblastic_leukemia", "name": "Acute Lymphoblastic Leukemia", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_white", "name": "White", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_national_comprehensive_cancer_network", "name": "National Comprehensive Cancer Network", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_infant_all", "name": "Infant ALL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_infants", "name": "Infants", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pharmacogenomic", "name": "Pharmacogenomic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_accurate", "name": "Accurate", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_polyps", "name": "Polyps", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mss", "name": "MSS", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_have", "name": "Have", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_benadryl", "name": "Benadryl", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_special", "name": "Special", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_straps", "name": "Straps", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_endorectal", "name": "Endorectal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_patient_guides", "name": "Patient Guides", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_google", "name": "Google", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_recent", "name": "Recent", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pedunculated", "name": "Pedunculated", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sessile", "name": "Sessile", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_esd", "name": "ESD", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_emr", "name": "EMR", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_first", "name": "First", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tamis", "name": "TAMIS", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_surveillance", "name": "Surveillance", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_proctoscopies", "name": "Proctoscopies", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_transabdominal", "name": "Transabdominal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_abdominal", "name": "Abdominal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_stool", "name": "Stool", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_iii", "name": "III", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_guide_any", "name": "Guide Any", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_oxaliplatin", "name": "Oxaliplatin", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_iri", "name": "IRI", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_covering", "name": "Covering", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_gerota", "name": "Gerota", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_urine", "name": "Urine", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_renal", "name": "Renal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_clean", "name": "Clean", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_carcinomas", "name": "Carcinomas", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_rcc", "name": "RCC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_rccs", "name": "RCCs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_soft_tissue_sarcoma", "name": "Soft Tissue Sarcoma", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_collecting", "name": "Collecting", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_local", "name": "Local", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_kidney", "name": "Kidney", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_distant", "name": "Distant", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_diagnosing", "name": "Diagnosing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_include", "name": "Include", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_plasma", "name": "Plasma", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_natural", "name": "Natural", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lymphoblasts", "name": "Lymphoblasts", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mature", "name": "Mature", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_burkitt", "name": "Burkitt", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ayas", "name": "AYAs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_otc", "name": "OTC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_because_aml", "name": "Because AML", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_platelets", "name": "Platelets", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lactate", "name": "Lactate", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_clotting", "name": "Clotting", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_proteins", "name": "Proteins", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_examples", "name": "Examples", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_amplification", "name": "Amplification", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_karyotype", "name": "Karyotype", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_closed_mris", "name": "Closed MRIs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mris", "name": "MRIs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_electrocardiogram", "name": "Electrocardiogram", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ecg", "name": "ECG", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ekg", "name": "EKG", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_care", "name": "Care", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_treating", "name": "Treating", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cytarabine", "name": "Cytarabine", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_philadelphia", "name": "Philadelphia", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_the_bcr", "name": "The BCR", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_testing_treatment_cml", "name": "Testing Treatment CML", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tests_test", "name": "Tests Test", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_don", "name": "Don", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_caregivers", "name": "Caregivers", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_aya", "name": "AYA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lymphoid", "name": "Lymphoid", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_myeloid", "name": "Myeloid", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_supportive", "name": "Supportive", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_abl", "name": "ABL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_guide_pancreatic", "name": "Guide Pancreatic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pancreatic", "name": "Pancreatic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pdac", "name": "PDAC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pancreas_sounds", "name": "Pancreas Sounds", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pan", "name": "PAN", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hboc", "name": "HBOC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_peutz", "name": "Peutz", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_jeghers", "name": "Jeghers", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lynch", "name": "Lynch", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_unlike", "name": "Unlike", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ongoing", "name": "Ongoing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_read_chapter", "name": "Read Chapter", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_advocate", "name": "Advocate", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_multidisciplinary", "name": "Multidisciplinary", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_expect", "name": "Expect", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_guide_the", "name": "Guide The", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_prostate", "name": "Prostate", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_besides", "name": "Besides", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_burning", "name": "Burning", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_erectile", "name": "Erectile", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_psa", "name": "PSA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_age_the", "name": "Age The", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_united_states", "name": "United States", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_black", "name": "Black", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hispanic", "name": "Hispanic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_asian", "name": "Asian", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_exercise", "name": "Exercise", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_advanced", "name": "Advanced", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_treatments", "name": "Treatments", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_rather", "name": "Rather", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_digital", "name": "Digital", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_such", "name": "Such", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_phi", "name": "PHI", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_isopsa", "name": "IsoPSA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_afterward", "name": "Afterward", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_like", "name": "Like", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_because_pet", "name": "Because PET", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_doctors", "name": "Doctors", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_checking", "name": "Checking", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_complications", "name": "Complications", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_germline", "name": "Germline", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_atm", "name": "ATM", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_molecular", "name": "Molecular", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chapter_what", "name": "Chapter What", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_assessing", "name": "Assessing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_life", "name": "Life", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nomograms_molecular", "name": "Nomograms Molecular", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_race", "name": "Race", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_normal_psa", "name": "Normal PSA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_psas", "name": "PSAs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_gleason", "name": "Gleason", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_grade_group", "name": "Grade Group", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_read", "name": "Read", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_grade_groups", "name": "Grade Groups", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_see_guide_guide", "name": "See Guide Guide", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bph", "name": "BPH", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_urinating", "name": "Urinating", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_weak", "name": "Weak", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_trouble", "name": "Trouble", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_feeling", "name": "Feeling", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_aggressive", "name": "Aggressive", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_diet", "name": "Diet", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nccn_guideline", "name": "NCCN Guideline", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_importantly", "name": "Importantly", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_diagnostic", "name": "Diagnostic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_its", "name": "Its", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_likewise", "name": "Likewise", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_psma", "name": "PSMA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pet_pet", "name": "PET PET", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_trus", "name": "TRUS", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_inherited", "name": "Inherited", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ashkenazi_jewish", "name": "Ashkenazi Jewish", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fanca", "name": "FANCA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_let", "name": "Let", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mthis", "name": "MThis", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hormone", "name": "Hormone", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_combining", "name": "Combining", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_adt", "name": "ADT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_castration", "name": "Castration", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_the_what", "name": "The What", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_androgen", "name": "Androgen", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lhrh", "name": "LHRH", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_behind", "name": "Behind", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_muscle", "name": "Muscle", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_breast", "name": "Breast", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tdlus", "name": "TDLUs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_organize", "name": "Organize", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_add", "name": "Add", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nac", "name": "NAC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nodes", "name": "Nodes", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_alns", "name": "ALNs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_primary", "name": "Primary", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_over", "name": "Over", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_invasive_cancer", "name": "Invasive Cancer", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_invasive", "name": "Invasive", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hang", "name": "Hang", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lobules", "name": "Lobules", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dcis_ductal", "name": "DCIS Ductal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_multiple", "name": "Multiple", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_breast_cancer", "name": "Breast Cancer", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lactation", "name": "Lactation", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mammogram", "name": "Mammogram", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_obstetrician", "name": "Obstetrician", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_inflammatory", "name": "Inflammatory", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_invasive_ductal_carcinoma", "name": "Invasive Ductal Carcinoma", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_idc", "name": "IDC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_breast_invasive", "name": "Breast Invasive", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_edema", "name": "Edema", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_erythema", "name": "Erythema", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ibc", "name": "IBC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_download", "name": "Download", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hormonal", "name": "Hormonal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_iuds", "name": "IUDs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_levels", "name": "Levels", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pregnancy", "name": "Pregnancy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_areas", "name": "Areas", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_intravenous", "name": "Intravenous", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_both", "name": "Both", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sodium", "name": "Sodium", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fdg_pet", "name": "FDG PET", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_axillary", "name": "Axillary", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_aln", "name": "ALN", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fna", "name": "FNA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_just", "name": "Just", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_substances", "name": "Substances", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hormones", "name": "Hormones", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_estrogen", "name": "Estrogen", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_endocrine", "name": "Endocrine", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ihc", "name": "IHC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_immunohistochemistry_immunohistochemistry", "name": "Immunohistochemistry Immunohistochemistry", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cea", "name": "CEA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_programmed", "name": "Programmed", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fish_fluorescence", "name": "FISH Fluorescence", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pcr", "name": "PCR", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_good", "name": "Good", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sln", "name": "SLN", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_snlb", "name": "SNLB", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_the_american_joint_committee", "name": "The American Joint Committee", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ajcc", "name": "AJCC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ipsilateral", "name": "Ipsilateral", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_metastasis_cancer", "name": "Metastasis Cancer", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mbc", "name": "MBC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_noninvasive", "name": "Noninvasive", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ductal", "name": "Ductal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dcis", "name": "DCIS", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_treating_ibc_care", "name": "Treating IBC Care", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_immunotherapy_treatment", "name": "Immunotherapy Treatment", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_residents", "name": "Residents", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nurse", "name": "Nurse", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nps", "name": "NPs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pas", "name": "PAs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_psychologists", "name": "Psychologists", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_social", "name": "Social", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mastectomy", "name": "Mastectomy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ribociclib", "name": "Ribociclib", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_kisqali", "name": "Kisqali", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_talazoparib", "name": "Talazoparib", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_talzenna", "name": "Talzenna", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_modified", "name": "Modified", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_preoperative", "name": "Preoperative", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_postoperative", "name": "Postoperative", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_doxorubicin", "name": "Doxorubicin", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_adcs", "name": "ADCs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_everolimus", "name": "Everolimus", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_afinitor", "name": "Afinitor", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_progesterone", "name": "Progesterone", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_zoladex", "name": "Zoladex", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lupron_depot", "name": "Lupron Depot", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_gonadotropin", "name": "Gonadotropin", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_premenopause", "name": "Premenopause", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_menstrual", "name": "Menstrual", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cns", "name": "CNS", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_csf", "name": "CSF", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lymphocytes", "name": "Lymphocytes", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_meninges", "name": "Meninges", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_primary_cns", "name": "Primary CNS", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_gather", "name": "Gather", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cns_tests", "name": "CNS Tests", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_imaging_imaging", "name": "Imaging Imaging", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_magnetic", "name": "Magnetic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sometimes_pet", "name": "Sometimes PET", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_list", "name": "List", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_steroids_chemotherapy_radiation", "name": "Steroids Chemotherapy Radiation", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_immunotherapy_stem", "name": "Immunotherapy Stem", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_drug_administration", "name": "Drug Administration", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fda", "name": "FDA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_try", "name": "Try", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_states_nccn_cancer_centers_nccn", "name": "States NCCN Cancer Centers NCCN", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_the_national_cancer_institute", "name": "The National Cancer Institute", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nci", "name": "NCI", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_worldwide_the", "name": "Worldwide The", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_national_library", "name": "National Library", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_intrathecal", "name": "Intrathecal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_intraocular", "name": "Intraocular", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_every", "name": "Every", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nausea", "name": "Nausea", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_vomiting", "name": "Vomiting", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_wbrt", "name": "WBRT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cancerous", "name": "Cancerous", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cdrituximab", "name": "CDRituximab", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_rituximab", "name": "Rituximab", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_stem", "name": "Stem", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hematopoietic", "name": "Hematopoietic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_quality", "name": "Quality", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_successful", "name": "Successful", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_whole", "name": "Whole", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_phases", "name": "Phases", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_induction_consolidation_treatment", "name": "Induction Consolidation Treatment", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_methotrexate", "name": "Methotrexate", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ibrutinib", "name": "Ibrutinib", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_imbruvica", "name": "Imbruvica", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_colectomy", "name": "Colectomy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_monitoring_cea", "name": "Monitoring CEA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_computed", "name": "Computed", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_egg", "name": "Egg", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_unfertilized", "name": "Unfertilized", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_young", "name": "Young", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tools", "name": "Tools", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bowel", "name": "Bowel", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_whether", "name": "Whether", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_checkpoint", "name": "Checkpoint", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_capeox", "name": "CAPEOX", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_folfox", "name": "FOLFOX", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nasopharynx_oropharynx_hypopharynx_cancer", "name": "Nasopharynx Oropharynx Hypopharynx Cancer", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_npc", "name": "NPC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_anatomy", "name": "Anatomy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nasopharyngeal", "name": "Nasopharyngeal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_npc_test", "name": "NPC Test", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mirror", "name": "Mirror", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_screen", "name": "Screen", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tobacco", "name": "Tobacco", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_their", "name": "Their", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_speak", "name": "Speak", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fnb", "name": "FNB", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ebv_dna", "name": "EBV DNA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_anatomic", "name": "Anatomic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_prognostic", "name": "Prognostic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pharynx_tnm", "name": "Pharynx TNM", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_based", "name": "Based", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cervical", "name": "Cervical", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_eggs", "name": "Eggs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lsil", "name": "LSIL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cin", "name": "CIN", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hsil", "name": "HSIL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_infection", "name": "Infection", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_other_hpv", "name": "Other HPV", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_oral", "name": "Oral", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_aids", "name": "AIDS", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cone", "name": "Cone", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_illnesses", "name": "Illnesses", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chemicals", "name": "Chemicals", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_transvaginal", "name": "Transvaginal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ebrt", "name": "EBRT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_euas", "name": "EUAs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cystoscopy", "name": "Cystoscopy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_proctoscopy", "name": "Proctoscopy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_the_international_federation", "name": "The International Federation", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_gynecology", "name": "Gynecology", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_obstetrics", "name": "Obstetrics", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_figo", "name": "FIGO", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cervical_cancer_stage", "name": "Cervical Cancer Stage", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_stress", "name": "Stress", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_anxiety", "name": "Anxiety", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_help", "name": "Help", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_surgery_surgery", "name": "Surgery Surgery", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hysterectomy_hysterectomy", "name": "Hysterectomy Hysterectomy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_extrafascial", "name": "Extrafascial", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_vaginal", "name": "Vaginal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_imrt", "name": "IMRT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_with_imrt", "name": "With IMRT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_stereotactic", "name": "Stereotactic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mht", "name": "MHT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hrt", "name": "HRT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_devices", "name": "Devices", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ink", "name": "Ink", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_interstitial", "name": "Interstitial", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_brachytherapy", "name": "Brachytherapy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_infusions", "name": "Infusions", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chemotherapy_platinum", "name": "Chemotherapy Platinum", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cisplatin", "name": "Cisplatin", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_loss", "name": "Loss", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nausea_vomiting_mouth", "name": "Nausea Vomiting Mouth", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hair", "name": "Hair", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fatigue_increased", "name": "Fatigue Increased", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bleeding", "name": "Bleeding", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_phase", "name": "Phase", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_who", "name": "Who", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_frequently", "name": "Frequently", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_reproductive", "name": "Reproductive", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lvsi", "name": "LVSI", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pelvic", "name": "Pelvic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cancers", "name": "Cancers", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_see", "name": "See", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_locally", "name": "Locally", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_imaging_unlike", "name": "Imaging Unlike", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_biomarkers", "name": "Biomarkers", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mismatch", "name": "Mismatch", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_microsatellite", "name": "Microsatellite", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_diversions", "name": "Diversions", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_indiana", "name": "Indiana", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_compared", "name": "Compared", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dbwc", "name": "DBWC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sbrt", "name": "SBRT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_only", "name": "Only", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_keytruda", "name": "Keytruda", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_advance", "name": "Advance", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_talking", "name": "Talking", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_knowing", "name": "Knowing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mediastinal", "name": "Mediastinal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mgzl", "name": "MGZL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pmbl", "name": "PMBL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_isrt", "name": "ISRT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_guide_about", "name": "Guide About", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_thyroid", "name": "Thyroid", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_contact", "name": "Contact", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_syndromes", "name": "Syndromes", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tsh", "name": "TSH", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nodules", "name": "Nodules", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_papillary", "name": "Papillary", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_differentiated", "name": "Differentiated", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chapter_medullary", "name": "Chapter Medullary", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_damage", "name": "Damage", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_levothyroxine", "name": "Levothyroxine", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_too", "name": "Too", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_weakened", "name": "Weakened", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_heart", "name": "Heart", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_rai", "name": "RAI", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_after_rai", "name": "After RAI", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_need", "name": "Need", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cancer_information_service", "name": "Cancer Information Service", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cis", "name": "CIS", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ptc", "name": "PTC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_factors", "name": "Factors", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_monitoring_after", "name": "Monitoring After", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ftc", "name": "FTC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_oncocytic", "name": "Oncocytic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hcc", "name": "HCC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lifelong", "name": "Lifelong", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_radioactive", "name": "Radioactive", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_short", "name": "Short", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_long", "name": "Long", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ned", "name": "NED", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lenvima", "name": "Lenvima", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nexavar", "name": "Nexavar", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cabometyx", "name": "Cabometyx", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_recommended", "name": "Recommended", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_guide_other", "name": "Guide Other", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_soft", "name": "Soft", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bone_cancer", "name": "Bone Cancer", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_giant", "name": "Giant", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_gctb", "name": "GCTB", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_osteosarcoma", "name": "Osteosarcoma", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chondrosarcoma", "name": "Chondrosarcoma", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chordoma", "name": "Chordoma", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ewing", "name": "Ewing", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_eastern_cooperative_oncology_group", "name": "Eastern Cooperative Oncology Group", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_calcium", "name": "Calcium", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pembrolizumab", "name": "Pembrolizumab", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_rna", "name": "RNA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ossification", "name": "Ossification", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_remodeling", "name": "Remodeling", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_size", "name": "Size", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sij", "name": "SIJ", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_node_there", "name": "Node There", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_metastasis_bone", "name": "Metastasis Bone", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mwhen", "name": "MWhen", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mbone", "name": "MBone", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_see_guide_liver", "name": "See Guide Liver", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bile_liver", "name": "Bile Liver", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bile", "name": "Bile", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hepato", "name": "Hepato", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_together", "name": "Together", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_known", "name": "Known", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_guide_cirrhosis_cirrhosis", "name": "Guide Cirrhosis Cirrhosis", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_african", "name": "African", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_north_american_black", "name": "North American Black", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hepatitis_hepatitis", "name": "Hepatitis Hepatitis", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_viruses", "name": "Viruses", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_afp", "name": "AFP", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_stomach", "name": "Stomach", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_egj", "name": "EGJ", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_the_egj", "name": "The EGJ", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_gej", "name": "GEJ", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_submucosa", "name": "Submucosa", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_subserosa", "name": "Subserosa", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_serosa", "name": "Serosa", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_eventually", "name": "Eventually", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_glioblastomas", "name": "Glioblastomas", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_difficulty", "name": "Difficulty", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_still", "name": "Still", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_gliomas", "name": "Gliomas", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sensory", "name": "Sensory", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mri_magnetic", "name": "MRI Magnetic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_histology", "name": "Histology", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_and", "name": "And", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_grade_another", "name": "Grade Another", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_see_guide", "name": "See Guide", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cll", "name": "CLL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lymphocytic", "name": "Lymphocytic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sll", "name": "SLL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_diagnosis", "name": "Diagnosis", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lab", "name": "Lab", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_quantitative", "name": "Quantitative", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_reticulocyte", "name": "Reticulocyte", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_coombs", "name": "Coombs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_uric", "name": "Uric", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_even", "name": "Even", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_see_guide_beta", "name": "See Guide Beta", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_lymphatic", "name": "Lymphatic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pcl", "name": "PCL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nhls", "name": "NHLs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cbcls", "name": "CBCLs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pcmzl", "name": "PCMZL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pcmz", "name": "PCMZ", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pcfcl_treatment", "name": "PCFCL Treatment", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_cbcl", "name": "CBCL", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_conduct", "name": "Conduct", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bladder", "name": "Bladder", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_urothelial", "name": "Urothelial", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_frequent", "name": "Frequent", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_urgency", "name": "Urgency", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_painful", "name": "Painful", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_study", "name": "Study", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_analyze", "name": "Analyze", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_secondhand", "name": "Secondhand", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_quitting", "name": "Quitting", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chapter_bladder", "name": "Chapter Bladder", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_oncology", "name": "Oncology", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_either", "name": "Either", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chapter_cystoscopy", "name": "Chapter Cystoscopy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pillows", "name": "Pillows", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mri_mri", "name": "MRI MRI", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tips", "name": "Tips", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chest", "name": "Chest", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_erbbif", "name": "ERBBIf", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_numbers", "name": "Numbers", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_grade_subtypes_the", "name": "Grade Subtypes The", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_glandular", "name": "Glandular", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_turbt", "name": "TURBT", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_confirm", "name": "Confirm", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_urethra_prostate_seminal", "name": "Urethra Prostate Seminal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_partial", "name": "Partial", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_fewer", "name": "Fewer", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_neobladder_for", "name": "Neobladder For", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_intravesical", "name": "Intravesical", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bcg", "name": "BCG", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_joining", "name": "Joining", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_opdivo", "name": "Opdivo", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_bavencio", "name": "Bavencio", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_tecentriq", "name": "Tecentriq", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chemoradiation_chemotherapy", "name": "Chemoradiation Chemotherapy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_trimodal", "name": "Trimodal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sexual", "name": "Sexual", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_anal", "name": "Anal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_identifying", "name": "Identifying", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_hra", "name": "HRA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sometimes_hra", "name": "Sometimes HRA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_siscca", "name": "SISCCA", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_gynecologic", "name": "Gynecologic", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_approximately", "name": "Approximately", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_precancer_there", "name": "Precancer There", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_iib", "name": "IIB", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_stage_iii_stage_iii", "name": "Stage III Stage III", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_detailed", "name": "Detailed", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_part", "name": "Part", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_sperm", "name": "Sperm", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chemoradiation_chemoradiation", "name": "Chemoradiation Chemoradiation", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_chemoradiation", "name": "Chemoradiation", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_monday", "name": "Monday", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_friday", "name": "Friday", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_discuss", "name": "Discuss", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_aquaphor", "name": "Aquaphor", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_mitomycin", "name": "Mitomycin", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_picc", "name": "PICC", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_capecitabine", "name": "Capecitabine", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_higher", "name": "Higher", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_see_follow", "name": "See Follow", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dres", "name": "DREs", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_inguinal", "name": "Inguinal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_waiting", "name": "Waiting", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_progressive", "name": "Progressive", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_accept", "name": "Accept", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_shame", "name": "SHAME", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_janet_anal", "name": "Janet Anal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_recurrence_recurrence", "name": "Recurrence Recurrence", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_apr", "name": "APR", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_abdominoperineal", "name": "Abdominoperineal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_anoscopy", "name": "Anoscopy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dcf", "name": "DCF", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_palliative", "name": "Palliative", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_progression", "name": "Progression", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_nivolumab", "name": "Nivolumab", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_thom_anal", "name": "Thom Anal", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_dre", "name": "DRE", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_recommendations", "name": "Recommendations", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pcp_your", "name": "PCP Your", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_pcp_recommendations", "name": "PCP Recommendations", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_ostomy_you", "name": "Ostomy You", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_healthy", "name": "Healthy", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_eat", "name": "Eat", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_alcohol", "name": "Alcohol", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_integrative", "name": "Integrative", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_resources", "name": "Resources", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_weigh", "name": "Weigh", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_second", "name": "Second", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_should", "name": "Should", "type": "PROPER_NOUN", "metadata": null}
+{"id": "entity_whom", "name": "Whom", "type": "PROPER_NOUN", "metadata": null}

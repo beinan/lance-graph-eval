@@ -1,0 +1,211 @@
+{
+  "benchmark": {
+    "name": "graphrag_eval_v1",
+    "runs": 30,
+    "warmups": 5,
+    "concurrency": 4,
+    "timeout_s": 30.0,
+    "seed": 42,
+    "output_dir": "results",
+    "metadata": {
+      "cache_policy": "warm cache after warmups; no manual cache drops",
+      "vector_dimension": 32,
+      "distance_metric": "cosine",
+      "index_params": {
+        "neo4j": {
+          "index": "vector",
+          "params": {
+            "vector.dimensions": 32,
+            "vector.similarity_function": "cosine"
+          }
+        },
+        "kuzu": {
+          "index": "hnsw",
+          "params": {
+            "m": 16,
+            "ef_construction": 200,
+            "ef_search": 100
+          }
+        },
+        "lance_graph": {
+          "index": "ivf_pq",
+          "params": {
+            "nlist": 1024,
+            "pq_m": 16,
+            "nprobe": 32
+          }
+        }
+      }
+    }
+  },
+  "system": {
+    "platform": "Linux-6.6.97+-x86_64-with-glibc2.36",
+    "python": "3.11.2",
+    "cpu_count": 96,
+    "memory_total_mb": 386939.97265625
+  },
+  "reports": [
+    {
+      "engine": "kuzu_local",
+      "query": "hybrid_search",
+      "tags": [
+        "hybrid",
+        "vector",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 2.999880671268329,
+        "stdev_ms": 0.9885060800309973,
+        "min_ms": 1.4095199876464903,
+        "max_ms": 5.080850038211793,
+        "p50_ms": 3.3331999729853123,
+        "p95_ms": 4.06510456232354,
+        "p99_ms": 4.825473131495529
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "kuzu_local",
+      "query": "local_search_2hop",
+      "tags": [
+        "local",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 6.274052802473307,
+        "stdev_ms": 1.2902825038123815,
+        "min_ms": 3.3551499946042895,
+        "max_ms": 7.6154390117153525,
+        "p50_ms": 6.803714990383014,
+        "p95_ms": 7.580023483023979,
+        "p99_ms": 7.607617999892682
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "kuzu_local",
+      "query": "parent_child_enrichment",
+      "tags": [
+        "context",
+        "parent"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 2.203404672521477,
+        "stdev_ms": 1.009058726820956,
+        "min_ms": 1.3008799869567156,
+        "max_ms": 3.8274500402621925,
+        "p50_ms": 1.683945010881871,
+        "p95_ms": 3.737686004023999,
+        "p99_ms": 3.80370483500883
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "kuzu_local",
+      "query": "global_search",
+      "tags": [
+        "global",
+        "aggregation"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 2.4741013340341547,
+        "stdev_ms": 1.0196658419169118,
+        "min_ms": 1.2919699656777084,
+        "max_ms": 3.755379992071539,
+        "p50_ms": 2.8187650023028255,
+        "p95_ms": 3.71350153000094,
+        "p99_ms": 3.749136572005227
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "lance_graph_local",
+      "query": "hybrid_search",
+      "tags": [
+        "hybrid",
+        "vector",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 2.7731522316268333,
+        "stdev_ms": 0.21901599700504804,
+        "min_ms": 2.433990011923015,
+        "max_ms": 3.5291400272399187,
+        "p50_ms": 2.753819979261607,
+        "p95_ms": 3.1593390012858436,
+        "p99_ms": 3.425340320100077
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "lance_graph_local",
+      "query": "local_search_2hop",
+      "tags": [
+        "local",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 4.000965930754319,
+        "stdev_ms": 0.4608002724847995,
+        "min_ms": 3.538040036801249,
+        "max_ms": 5.487879971042275,
+        "p50_ms": 3.8082749815657735,
+        "p95_ms": 4.889018530957401,
+        "p99_ms": 5.3285220864927405
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "lance_graph_local",
+      "query": "parent_child_enrichment",
+      "tags": [
+        "context",
+        "parent"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 2.3902696654355773,
+        "stdev_ms": 0.08984836937032897,
+        "min_ms": 2.2461300250142813,
+        "max_ms": 2.6186800096184015,
+        "p50_ms": 2.367734967265278,
+        "p95_ms": 2.5343600049382076,
+        "p99_ms": 2.5967067043529823
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "lance_graph_local",
+      "query": "global_search",
+      "tags": [
+        "global",
+        "aggregation"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 1.4907886992053438,
+        "stdev_ms": 0.04476175996768878,
+        "min_ms": 1.4190999791026115,
+        "max_ms": 1.6056200256571174,
+        "p50_ms": 1.4862900134176016,
+        "p95_ms": 1.5828230476472527,
+        "p99_ms": 1.6001770150614902
+      },
+      "errors": 0,
+      "expect_failures": 0
+    }
+  ]
+}

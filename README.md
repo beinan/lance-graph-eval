@@ -1,0 +1,90 @@
+# lance-graph-eval
+
+Benchmark harness for GraphRAG retrieval workflows across lance-graph, Neo4j, and Kuzu.
+
+## Quick start
+
+1) Create a venv and install deps
+
+```bash
+python -m venv .venv
+. .venv/bin/activate
+pip install -e .[all]
+```
+
+Start Neo4j (optional, for tri-engine runs):
+
+```bash
+NEO4J_AUTH=neo4j/neo4j_password docker compose -f docker-compose.neo4j.yml up -d
+```
+
+2) Edit the sample config
+
+```bash
+cp configs/graphrag_eval.yaml configs/local.yaml
+```
+
+3) Run
+
+```bash
+lgeval --config configs/local.yaml --out results
+```
+
+## Config overview
+
+- `benchmark`: run settings (runs, warmups, concurrency, timeout)
+- `engines`: connection info per engine
+- `setup`: per-engine setup queries (indexes, schema, preload)
+- `queries`: per-engine query texts for each benchmark task
+
+See `configs/graphrag_eval.yaml` for a starting point.
+
+## Dataset format
+
+The canonical JSONL layout is documented in `datasets/README.md`. You can convert JSONL to Parquet for columnar
+engines with:
+
+```bash
+python3 scripts/prepare_parquet.py --dataset /path/to/dataset
+```
+
+## Ingestion helpers
+
+Neo4j:
+
+```bash
+python3 scripts/ingest_neo4j.py --uri bolt://localhost:7687 --user neo4j --password neo4j_password \\
+  --dataset /path/to/dataset --derive-has-chunk --create-vector-index --create-fulltext-index
+```
+
+Kuzu (row-wise, slower but simple):
+
+```bash
+python3 scripts/ingest_kuzu.py --db /path/to/kuzu.db --dataset /path/to/dataset --derive-has-chunk
+```
+
+Lance-graph (datasets mode):
+
+1) Convert JSONL to Parquet:
+
+```bash
+python3 scripts/ingest_lance_graph.py --dataset /path/to/dataset
+export GRAPHRAG_LANCE_DATASETS=/path/to/dataset/parquet
+```
+
+2) Ensure the `tables` section in `configs/graphrag_eval.yaml` matches the Parquet filenames.
+
+## Notes
+
+- You should tune vector index parameters per engine (or fix them across engines) and keep those values recorded in the config.
+- If your queries can return large payloads, consider writing them to return counts only to reduce transfer overhead during benchmarking.
+- The sample config uses `${EMBEDDING_JSON}`. You can generate one with:
+
+  ```bash
+  python3 scripts/make_embedding.py --dim 32 --out /tmp/embedding.json
+  export EMBEDDING_JSON=/tmp/embedding.json
+  ```
+- Dataset paths in the sample config use `${GRAPHRAG_MEDICAL_PATH}` and `${GRAPHRAG_NOVEL_PATH}`; set those env vars before running. Any string in the config supports `${VAR}` expansion.
+- Queries can define `expect` constraints (e.g., `min_rows`) to validate basic correctness. Adjust or remove them if your dataset is sparse.
+- Use `fetch: scalar` for queries that return a single numeric value (e.g., `RETURN count(*) AS n`).
+- This harness measures end-to-end client latency (driver + server time). If you want server-side timing, add timing functions within each engine.

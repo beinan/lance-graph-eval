@@ -1,0 +1,361 @@
+engine,query,run_idx,duration_ms,ok,error,row_count,rss_mb,expect_ok,expect_error
+kuzu_local,hybrid_search,0,0.401,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,1,0.366,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,2,0.394,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,3,0.372,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,4,0.360,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,5,0.369,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,6,0.352,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,7,0.345,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,8,0.376,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,9,0.351,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,10,0.345,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,11,0.382,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,12,0.351,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,13,0.369,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,14,0.358,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,15,0.347,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,16,0.386,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,17,0.349,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,18,0.353,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,19,0.370,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,20,0.357,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,21,0.345,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,22,0.363,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,23,0.342,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,24,0.374,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,25,0.356,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,26,0.361,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,27,0.380,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,28,0.365,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,hybrid_search,29,0.339,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,local_search_2hop,0,0.511,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,1,0.543,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,2,0.536,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,3,0.521,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,4,0.529,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,5,0.518,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,6,0.548,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,7,0.511,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,8,0.529,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,9,0.503,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,10,0.530,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,11,0.503,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,12,0.537,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,13,0.501,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,14,0.533,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,15,0.499,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,16,0.523,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,17,0.499,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,18,0.529,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,19,0.501,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,20,0.542,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,21,0.501,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,22,0.526,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,23,0.538,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,24,0.519,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,25,0.532,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,26,0.516,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,27,0.538,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,28,0.510,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,local_search_2hop,29,0.529,False,"Binder exception: Function ALL did not receive correct arguments:
+Actual:   (RECURSIVE_REL,ANY)
+Expected: (LIST,ANY) -> BOOL
+
+",,,,
+kuzu_local,parent_child_enrichment,0,0.370,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,1,0.391,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,2,0.377,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,3,0.362,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,4,0.387,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,5,0.364,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,6,0.355,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,7,0.369,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,8,0.359,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,9,0.390,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,10,0.372,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,11,0.352,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,12,0.391,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,13,0.360,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,14,0.502,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,15,0.477,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,16,0.411,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,17,0.373,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,18,0.361,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,19,0.390,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,20,0.365,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,21,0.360,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,22,0.399,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,23,0.371,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,24,0.388,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,25,0.385,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,26,0.359,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,27,0.412,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,28,0.363,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,parent_child_enrichment,29,0.387,False,Catalog exception: function VECTOR_SIMILARITY does not exist.,,,,
+kuzu_local,global_search,0,1.511,True,,1,0.000,True,
+kuzu_local,global_search,1,4.306,True,,1,0.000,True,
+kuzu_local,global_search,2,3.505,True,,1,0.000,True,
+kuzu_local,global_search,3,3.530,True,,1,0.000,True,
+kuzu_local,global_search,4,3.542,True,,1,0.000,True,
+kuzu_local,global_search,5,1.412,True,,1,0.000,True,
+kuzu_local,global_search,6,3.071,True,,1,0.000,True,
+kuzu_local,global_search,7,3.499,True,,1,1.500,True,
+kuzu_local,global_search,8,2.816,True,,1,0.750,True,
+kuzu_local,global_search,9,1.506,True,,1,0.000,True,
+kuzu_local,global_search,10,3.610,True,,1,0.750,True,
+kuzu_local,global_search,11,3.381,True,,1,0.750,True,
+kuzu_local,global_search,12,3.331,True,,1,0.000,True,
+kuzu_local,global_search,13,3.556,True,,1,0.000,True,
+kuzu_local,global_search,14,3.652,True,,1,0.750,True,
+kuzu_local,global_search,15,3.546,True,,1,0.000,True,
+kuzu_local,global_search,16,3.424,True,,1,0.000,True,
+kuzu_local,global_search,17,1.432,True,,1,0.000,True,
+kuzu_local,global_search,18,2.534,True,,1,0.000,True,
+kuzu_local,global_search,19,3.444,True,,1,0.000,True,
+kuzu_local,global_search,20,1.375,True,,1,0.000,True,
+kuzu_local,global_search,21,1.464,True,,1,0.000,True,
+kuzu_local,global_search,22,3.435,True,,1,0.000,True,
+kuzu_local,global_search,23,1.381,True,,1,0.000,True,
+kuzu_local,global_search,24,1.494,True,,1,0.000,True,
+kuzu_local,global_search,25,1.529,True,,1,0.000,True,
+kuzu_local,global_search,26,3.309,True,,1,0.000,True,
+kuzu_local,global_search,27,1.423,True,,1,0.000,True,
+kuzu_local,global_search,28,1.425,True,,1,0.000,True,
+kuzu_local,global_search,29,1.547,True,,1,0.000,True,
+lance_graph_local,hybrid_search,0,0.074,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,1,0.096,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,2,0.082,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,3,0.084,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,4,0.072,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,5,0.069,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,6,0.069,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,7,0.068,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,8,0.146,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,9,0.076,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,10,0.073,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,11,0.070,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,12,0.069,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,13,0.093,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,14,0.073,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,15,0.076,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,16,0.075,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,17,0.070,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,18,0.068,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,19,0.068,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,20,0.067,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,21,0.067,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,22,0.069,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,23,0.067,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,24,0.067,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,25,0.072,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,26,0.068,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,27,0.094,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,28,0.068,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,hybrid_search,29,0.077,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN mentions m ON c.id = m.chunk_id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,0,0.058,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,1,0.058,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,2,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,3,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,4,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,5,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,6,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,7,0.074,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,8,0.062,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,9,0.057,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,10,0.070,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,11,0.060,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,12,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,13,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,14,0.057,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,15,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,16,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,17,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,18,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,19,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,20,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,21,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,22,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,23,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,24,0.079,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,25,0.059,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,26,0.060,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,27,0.067,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,28,0.065,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,local_search_2hop,29,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""-- translate to joins over edge tables\nSELECT COUNT(*) AS n FROM edges\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,0,0.067,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,1,0.067,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,2,0.066,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,3,0.094,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,4,0.080,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,5,0.081,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,6,0.068,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,7,0.066,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,8,0.067,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,9,0.068,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,10,0.068,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,11,0.067,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,12,0.070,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,13,0.074,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,14,0.067,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,15,0.066,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,16,0.082,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,17,0.071,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,18,0.067,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,19,0.075,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,20,0.067,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,21,0.066,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,22,0.071,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,23,0.066,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,24,0.065,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,25,0.065,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,26,0.065,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,27,0.064,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,28,0.064,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,parent_child_enrichment,29,0.064,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n\nFROM chunks c\nJOIN parents p ON c.parent_id = p.id\nWHERE vector_similarity(c.embedding, [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) > 0.1\n"", code: Tag }",,,,
+lance_graph_local,global_search,0,0.058,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,1,0.057,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,2,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,3,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,4,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,5,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,6,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,7,0.059,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,8,0.059,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,9,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,10,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,11,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,12,0.073,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,13,0.060,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,14,0.057,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,15,0.064,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,16,0.056,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,17,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,18,0.061,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,19,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,20,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,21,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,22,0.054,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,23,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,24,0.054,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,25,0.058,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,26,0.058,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,27,0.055,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,28,0.054,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
+lance_graph_local,global_search,29,0.075,False,"Cypher parse error at position 0: Failed to parse Cypher query: Parsing Error: Error { input: ""SELECT COUNT(*) AS n FROM communities WHERE level = 1\n"", code: Tag }",,,,
