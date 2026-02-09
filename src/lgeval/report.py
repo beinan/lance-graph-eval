@@ -28,7 +28,7 @@ def write_report(report: BenchmarkReport, out_dir: str) -> Dict[str, str]:
 
     _write_summary_json(report, summary_path)
     _write_samples_csv(report.reports, samples_path)
-    _write_summary_csv(report.reports, summary_csv_path)
+    _write_summary_csv(report.reports, report.system, summary_csv_path)
 
     return {
         "summary_json": summary_path,
@@ -41,6 +41,7 @@ def _write_summary_json(report: BenchmarkReport, path: str) -> None:
     payload = {
         "benchmark": asdict(report.benchmark),
         "system": report.system,
+        "hardware": report.system,
         "reports": [
             {
                 "engine": r.engine,
@@ -88,13 +89,17 @@ def _write_samples_csv(reports: List[QueryReport], path: str) -> None:
                 ])
 
 
-def _write_summary_csv(reports: List[QueryReport], path: str) -> None:
+def _write_summary_csv(reports: List[QueryReport], system: Dict[str, object], path: str) -> None:
     with open(path, "w", newline="", encoding="utf-8") as handle:
         writer = csv.writer(handle)
         writer.writerow([
             "engine",
             "query",
             "tags",
+            "platform",
+            "python",
+            "cpu_count",
+            "memory_total_mb",
             "count",
             "mean_ms",
             "stdev_ms",
@@ -112,6 +117,10 @@ def _write_summary_csv(reports: List[QueryReport], path: str) -> None:
                 report.engine,
                 report.query,
                 ",".join(report.tags),
+                system.get("platform", ""),
+                system.get("python", ""),
+                system.get("cpu_count", ""),
+                f"{system.get('memory_total_mb', ''):.3f}" if isinstance(system.get("memory_total_mb"), (int, float)) else system.get("memory_total_mb", ""),
                 stats.get("count", 0),
                 f"{stats.get('mean_ms', 0.0):.3f}",
                 f"{stats.get('stdev_ms', 0.0):.3f}",
