@@ -1,0 +1,16 @@
+engine,query,tags,count,mean_ms,stdev_ms,min_ms,max_ms,p50_ms,p95_ms,p99_ms,errors,expect_failures
+neo4j_local,hybrid_search,"hybrid,vector,traversal",30,4.162,2.241,2.058,11.770,3.509,9.695,11.234,0,0
+neo4j_local,local_search_2hop,"local,traversal",30,3.302,0.753,2.116,5.898,3.153,4.355,5.452,0,30
+neo4j_local,parent_child_enrichment,"context,parent",30,3.117,0.596,2.261,5.067,3.064,4.087,4.809,0,0
+neo4j_local,global_search,"global,aggregation",30,3.387,0.830,2.049,5.675,3.439,4.481,5.371,0,0
+neo4j_local,deep_traversal_5hop,"deep,traversal",30,27.181,6.358,23.976,44.160,24.561,42.769,43.818,0,0
+kuzu_local,hybrid_search,"hybrid,vector,traversal",30,2.685,1.046,1.314,4.390,3.187,3.985,4.325,0,0
+kuzu_local,local_search_2hop,"local,traversal",30,2.199,0.604,1.863,4.180,1.972,3.789,4.081,0,30
+kuzu_local,parent_child_enrichment,"context,parent",30,2.154,0.954,1.307,3.699,1.565,3.630,3.693,0,0
+kuzu_local,global_search,"global,aggregation",30,2.560,1.038,1.398,3.893,2.256,3.848,3.888,0,0
+kuzu_local,deep_traversal_5hop,"deep,traversal",30,28.662,1.939,25.752,32.429,28.171,31.959,32.358,0,0
+lance_graph_local,hybrid_search,"hybrid,vector,traversal",30,2.590,0.145,2.355,2.916,2.558,2.814,2.892,0,0
+lance_graph_local,local_search_2hop,"local,traversal",30,2.492,0.130,2.279,2.761,2.468,2.730,2.753,0,30
+lance_graph_local,parent_child_enrichment,"context,parent",30,2.260,0.091,2.068,2.489,2.261,2.392,2.465,0,0
+lance_graph_local,global_search,"global,aggregation",30,1.292,0.068,1.187,1.537,1.290,1.375,1.490,0,0
+lance_graph_local,deep_traversal_5hop,"deep,traversal",30,16.115,0.558,15.320,17.634,15.952,17.137,17.537,0,0

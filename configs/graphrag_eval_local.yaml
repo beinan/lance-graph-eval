@@ -94,19 +94,11 @@ setup:
         CREATE VECTOR INDEX chunk_embedding IF NOT EXISTS
         FOR (c:Chunk) ON (c.embedding)
         OPTIONS {indexConfig: {`vector.dimensions`: 32, `vector.similarity_function`: 'cosine'}}
-      kuzu: |
-        CREATE INDEX chunk_embedding ON Chunk(embedding) USING HNSW;
-      lance_graph: |
-        -- create IVF-PQ index via lance-graph tooling
   - name: fulltext_index
     per_engine:
       neo4j: |
         CREATE FULLTEXT INDEX entity_name IF NOT EXISTS
         FOR (e:Entity) ON EACH [e.name]
-      kuzu: |
-        -- create fulltext index via kuzu tooling
-      lance_graph: |
-        -- create fulltext index via lance-graph tooling
 
 queries:
   - name: hybrid_search
@@ -184,4 +176,27 @@ queries:
         RETURN count(*) AS n
       lance_graph: |
         MATCH (c:Community {level: $level})
+        RETURN count(*) AS n
+  - name: deep_traversal_5hop
+    tags: [deep, traversal]
+    params:
+      entity_name: "About"
+    expect:
+      min_rows: 1
+    fetch: scalar
+    texts:
+      neo4j: |
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})
+        MATCH (c)-[:MENTIONS]->(e)<-[:MENTIONS]-(c2:Chunk)-[:PARENT_OF]->(d:Document)
+              -[:HAS_CHUNK]->(c3:Chunk)-[:MENTIONS]->(e2:Entity)
+        RETURN count(*) AS n
+      kuzu: |
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})
+        MATCH (c)-[:MENTIONS]->(e)<-[:MENTIONS]-(c2:Chunk)-[:PARENT_OF]->(d:Document)
+              -[:HAS_CHUNK]->(c3:Chunk)-[:MENTIONS]->(e2:Entity)
+        RETURN count(*) AS n
+      lance_graph: |
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})
+        MATCH (c)-[:MENTIONS]->(e)<-[:MENTIONS]-(c2:Chunk)-[:PARENT_OF]->(d:Document)
+              -[:HAS_CHUNK]->(c3:Chunk)-[:MENTIONS]->(e2:Entity)
         RETURN count(*) AS n
