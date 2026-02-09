@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CORES_LIST=(2 4 32 96)
+CORES_LIST=(1 2 4 32 96)
 IMAGE_NAME="lance-graph-eval-runner"
 NEO4J_CONTAINER="lgeval-neo4j"
 NEO4J_AUTH_VAL=${NEO4J_AUTH:-neo4j/neo4j_password}

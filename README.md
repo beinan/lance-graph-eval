@@ -27,12 +27,12 @@ benchmark runner. Use the sweep script (uses `docker run` to avoid compose compa
 ./scripts/run_core_sweep.sh
 ```
 
-This runs 2/4/32/96 core sweeps with the same CPU pinning for Neo4j and the runner.
+This runs 1/2/4/32/96 core sweeps with the same CPU pinning for Neo4j and the runner.
 
 Summarize sweep results into one CSV:
 
 ```bash
-python3 scripts/summarize_core_sweep.py --cores 2,4,32,96 --last 4
+python3 scripts/summarize_core_sweep.py --cores 1,2,4,32,96 --last 5
 ```
 
 2) Edit the sample config
