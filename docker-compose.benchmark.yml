@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+  neo4j:
+    image: neo4j:latest
+    container_name: lgeval-neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: ${NEO4J_AUTH:-neo4j/neo4j_password}
+      NEO4J_dbms_memory_pagecache_size: 2G
+      NEO4J_dbms_memory_heap_initial__size: 2G
+      NEO4J_dbms_memory_heap_max__size: 2G
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    cpuset: ${CPUSET_CPUS:-0-3}
+    cpus: ${CPU_LIMIT:-4.0}
+
+  runner:
+    build:
+      context: .
+    container_name: lgeval-runner
+    depends_on:
+      - neo4j
+    environment:
+      EMBEDDING_JSON: /app/datasets/embedding.json
+      GRAPHRAG_MEDICAL_PATH: /app/datasets/graph/graphrag_bench_medical
+      GRAPHRAG_NOVEL_PATH: /app/datasets/graph/graphrag_bench_novel
+      GRAPHRAG_LANCE_DATASETS: /app/datasets/graph/graphrag_bench_medical/parquet
+      KUZU_PATH: /app/datasets/kuzu_medical.db
+    volumes:
+      - ./datasets:/app/datasets
+      - ./results:/app/results
+    command: ["--config", "configs/graphrag_eval.yaml", "--out", "results"]
+    cpuset: ${CPUSET_CPUS:-0-3}
+    cpus: ${CPU_LIMIT:-4.0}
+
+volumes:
+  neo4j_data:
+  neo4j_logs:

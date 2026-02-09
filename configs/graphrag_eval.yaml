@@ -41,10 +41,10 @@ engines:
   - name: neo4j_local
     kind: neo4j
     options:
-      uri: bolt://localhost:7687
-      user: neo4j
-      password: neo4j_password
-      database: neo4j
+      uri: ${NEO4J_URI}
+      user: ${NEO4J_USER}
+      password: ${NEO4J_PASSWORD}
+      database: ${NEO4J_DATABASE}
       threadsafe: true
   - name: kuzu_local
     kind: kuzu

@@ -1,0 +1,9 @@
+.git
+.venv
+__pycache__
+*.pyc
+results
+datasets/raw
+datasets/graph
+datasets/kuzu_medical.db
+datasets/embedding.json

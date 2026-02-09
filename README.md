@@ -18,13 +18,38 @@ Start Neo4j (optional, for tri-engine runs):
 NEO4J_AUTH=neo4j/neo4j_password docker compose -f docker-compose.neo4j.yml up -d
 ```
 
+## Fully containerized (fair CPU limits)
+
+To make a fair CPU comparison, run **all engines in containers** and pin the CPU set for both Neo4j and the
+benchmark runner. Use the sweep script (uses `docker run` to avoid compose compatibility issues):
+
+```bash
+./scripts/run_core_sweep.sh
+```
+
+This runs 2/4/32/96 core sweeps with the same CPU pinning for Neo4j and the runner.
+
 2) Edit the sample config
 
 ```bash
 cp configs/graphrag_eval.yaml configs/local.yaml
 ```
 
-3) Run
+3) Set required env vars
+
+```bash
+export EMBEDDING_JSON="$(pwd)/datasets/embedding.json"
+export GRAPHRAG_MEDICAL_PATH="$(pwd)/datasets/graph/graphrag_bench_medical"
+export GRAPHRAG_NOVEL_PATH="$(pwd)/datasets/graph/graphrag_bench_novel"
+export GRAPHRAG_LANCE_DATASETS="$(pwd)/datasets/graph/graphrag_bench_medical/parquet"
+export KUZU_PATH="$(pwd)/datasets/kuzu_medical.db"
+export NEO4J_URI="bolt://localhost:7687"
+export NEO4J_USER="neo4j"
+export NEO4J_PASSWORD="neo4j_password"
+export NEO4J_DATABASE="neo4j"
+```
+
+4) Run
 
 ```bash
 lgeval --config configs/local.yaml --out results
