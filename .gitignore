@@ -2,3 +2,8 @@
 __pycache__/
 *.pyc
 .DS_Store
+.local_data/
+datasets/raw/graphrag_bench_cs/
+datasets/graph/graphrag_bench_cs/
+datasets/kuzu_cs.db
+datasets/kuzu_cs.db.wal
