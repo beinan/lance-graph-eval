@@ -35,6 +35,8 @@ Summarize sweep results into one CSV:
 python3 scripts/summarize_core_sweep.py --cores 1,2,4,32,96 --last 5
 ```
 
+Dataset options are tracked in `docs/datasets.md`.
+
 2) Edit the sample config
 
 ```bash
@@ -87,6 +89,47 @@ python3 scripts/convert_graphrag_bench.py --corpus datasets/raw/graphrag_bench/m
   --out datasets/graph/graphrag_bench_medical --embedding-dim 32
 python3 scripts/convert_graphrag_bench.py --corpus datasets/raw/graphrag_bench/novel.json \\
   --out datasets/graph/graphrag_bench_novel --embedding-dim 32
+```
+
+### GraphRAG-Bench CS variant (textbooks)
+
+Download the `textbooks/` folder from the Awesome-GraphRAG dataset:
+
+```bash
+python3 - <<'PY'
+from huggingface_hub import snapshot_download
+
+snapshot_download(
+    "Awesome-GraphRAG/GraphRAG-Bench",
+    repo_type="dataset",
+    allow_patterns=["textbooks/**"],
+    local_dir="datasets/raw/graphrag_bench_cs",
+)
+PY
+```
+
+Convert structured textbook entries to the canonical JSONL layout:
+
+```bash
+python3 scripts/convert_graphrag_bench_cs.py \\
+  --textbooks-dir datasets/raw/graphrag_bench_cs/textbooks \\
+  --out datasets/graph/graphrag_bench_cs --embedding-dim 32
+```
+
+Prepare Parquet for lance-graph and ingest Kuzu:
+
+```bash
+python3 scripts/prepare_parquet.py --dataset datasets/graph/graphrag_bench_cs
+python3 scripts/ingest_kuzu.py --db datasets/kuzu_cs.db --dataset datasets/graph/graphrag_bench_cs
+```
+
+To run the benchmark against the CS variant, set:
+
+```bash
+export GRAPHRAG_DATASET_DIR="$(pwd)/datasets/graph/graphrag_bench_cs"
+export GRAPHRAG_LANCE_DATASETS="$(pwd)/datasets/graph/graphrag_bench_cs/parquet"
+export KUZU_PATH="$(pwd)/datasets/kuzu_cs.db"
+export GRAPHRAG_CS_PATH="$GRAPHRAG_DATASET_DIR"
 ```
 
 ## Config overview

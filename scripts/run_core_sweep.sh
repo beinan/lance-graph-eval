@@ -11,6 +11,29 @@ NEO4J_USER_VAL=${NEO4J_USER:-${NEO4J_AUTH_VAL%%/*}}
 NEO4J_PASSWORD_VAL=${NEO4J_PASSWORD:-${NEO4J_AUTH_VAL#*/}}
 NEO4J_DATABASE_VAL=${NEO4J_DATABASE:-neo4j}
 
+REPO_ROOT="$(pwd)"
+DATASETS_ROOT="${REPO_ROOT}/datasets"
+HOST_DATASET_DIR=${GRAPHRAG_DATASET_DIR:-${DATASETS_ROOT}/graph/graphrag_bench_medical}
+HOST_LANCE_DATASETS=${GRAPHRAG_LANCE_DATASETS:-${HOST_DATASET_DIR}/parquet}
+HOST_KUZU_PATH=${KUZU_PATH:-${DATASETS_ROOT}/kuzu_medical.db}
+
+if [[ "$HOST_DATASET_DIR" != "$DATASETS_ROOT/"* ]]; then
+  echo "GRAPHRAG_DATASET_DIR must live under ${DATASETS_ROOT}"
+  exit 1
+fi
+if [[ "$HOST_LANCE_DATASETS" != "$DATASETS_ROOT/"* ]]; then
+  echo "GRAPHRAG_LANCE_DATASETS must live under ${DATASETS_ROOT}"
+  exit 1
+fi
+if [[ "$HOST_KUZU_PATH" != "$DATASETS_ROOT/"* ]]; then
+  echo "KUZU_PATH must live under ${DATASETS_ROOT}"
+  exit 1
+fi
+
+CONTAINER_DATASET_DIR="/app/datasets/${HOST_DATASET_DIR#${DATASETS_ROOT}/}"
+CONTAINER_LANCE_DATASETS="/app/datasets/${HOST_LANCE_DATASETS#${DATASETS_ROOT}/}"
+CONTAINER_KUZU_PATH="/app/datasets/${HOST_KUZU_PATH#${DATASETS_ROOT}/}"
+
 docker network inspect "$NETWORK_NAME" >/dev/null 2>&1 || docker network create "$NETWORK_NAME" >/dev/null
 
 # Build runner image once
@@ -69,7 +92,7 @@ for CORES in "${CORES_LIST[@]}"; do
       --user "$NEO4J_USER_VAL" \
       --password "$NEO4J_PASSWORD_VAL" \
       --database "$NEO4J_DATABASE_VAL" \
-      --dataset /app/datasets/graph/graphrag_bench_medical \
+      --dataset "$CONTAINER_DATASET_DIR" \
       --embedding-dim 32 \
       --create-vector-index \
       --create-fulltext-index
@@ -79,10 +102,11 @@ for CORES in "${CORES_LIST[@]}"; do
     --network "$NETWORK_NAME" \
     --cpuset-cpus "$CPUSET" --cpus "$CORES" \
     -e EMBEDDING_JSON=/app/datasets/embedding.json \
-    -e GRAPHRAG_MEDICAL_PATH=/app/datasets/graph/graphrag_bench_medical \
-    -e GRAPHRAG_NOVEL_PATH=/app/datasets/graph/graphrag_bench_novel \
-    -e GRAPHRAG_LANCE_DATASETS=/app/datasets/graph/graphrag_bench_medical/parquet \
-    -e KUZU_PATH=/app/datasets/kuzu_medical.db \
+    -e GRAPHRAG_MEDICAL_PATH="$CONTAINER_DATASET_DIR" \
+    -e GRAPHRAG_NOVEL_PATH="$CONTAINER_DATASET_DIR" \
+    -e GRAPHRAG_CS_PATH="$CONTAINER_DATASET_DIR" \
+    -e GRAPHRAG_LANCE_DATASETS="$CONTAINER_LANCE_DATASETS" \
+    -e KUZU_PATH="$CONTAINER_KUZU_PATH" \
     -e NEO4J_URI="bolt://$NEO4J_CONTAINER:7687" \
     -e NEO4J_USER="$NEO4J_USER_VAL" \
     -e NEO4J_PASSWORD="$NEO4J_PASSWORD_VAL" \

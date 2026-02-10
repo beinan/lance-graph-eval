@@ -36,6 +36,9 @@ datasets:
   - name: graphrag_bench_novel
     path: ${GRAPHRAG_NOVEL_PATH}
     notes: "Long-form narrative with chapter-level parent nodes"
+  - name: graphrag_bench_cs
+    path: ${GRAPHRAG_CS_PATH}
+    notes: "CS textbook corpus (GraphRAG-Bench structured variant)"
 
 engines:
   - name: neo4j_local
