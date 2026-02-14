@@ -121,12 +121,10 @@ queries:
       neo4j: |
         CALL db.index.vector.queryNodes('chunk_embedding', $top_k, $embedding)
         YIELD node, score
-        MATCH (node)-[:MENTIONS]->(e:Entity)
         RETURN count(*) AS n
       kuzu: |
         CALL QUERY_VECTOR_INDEX('Chunk', 'chunk_embedding', $embedding, $top_k)
         YIELD node, distance
-        MATCH (node)-[:MENTIONS]->(e:Entity)
         RETURN count(*) AS n
       lance_graph:
         query: |
