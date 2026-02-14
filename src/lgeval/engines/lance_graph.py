@@ -131,6 +131,8 @@ class LanceGraphEngine(BaseEngine):
             return _table_to_result(table, fetch)
 
         table = self._engine.execute(rendered)
+        if fetch == "scalar" and table.num_columns == 1 and table.column(0).type == self._pa.null():
+            raise RuntimeError("query returned NULL; check vector rerank or embedding setup")
         return _table_to_result(table, fetch)
 
     def _build_graph_config(self, graph_spec: Dict[str, Any]):
@@ -191,7 +193,13 @@ class LanceGraphEngine(BaseEngine):
         path = self._resolve_table_path(key)
         if not os.path.exists(path):
             raise FileNotFoundError(f"Table not found: {path}")
-        return self._pq.read_table(path)
+        table = self._pq.read_table(path)
+        return self._maybe_cast_embeddings(table)
+
+    def _maybe_cast_embeddings(self, table):
+        if "embedding" not in table.schema.names:
+            return table
+        return self._ensure_float32_embeddings(table, "embedding")
 
     def _resolve_table_path(self, key: str) -> str:
         if key in self._tables:
@@ -301,6 +309,20 @@ class LanceGraphEngine(BaseEngine):
             metric = DistanceMetric.L2
 
         vector_column = params.get("vector_column") or "d.embedding"
+        if vector_column.endswith(".embedding"):
+            if "Document" in self._datasets and "embedding" not in self._datasets["Document"].schema.names:
+                raise RuntimeError(
+                    "vector_search requires Document.embedding; ensure embeddings exist "
+                    "or use a different vector_column."
+                )
+        else:
+            label = vector_column.split(".", 1)[0]
+            if label and label in self._datasets:
+                if "embedding" not in self._datasets[label].schema.names:
+                    raise RuntimeError(
+                        f"vector_search requires {label}.embedding; ensure embeddings exist "
+                        "or use a different vector_column."
+                    )
         query = CypherQuery(rendered).with_config(self._graph_config)
         vector_search = (
             VectorSearch(vector_column)

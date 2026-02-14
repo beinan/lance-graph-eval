@@ -16,6 +16,10 @@ DATASETS_ROOT="${REPO_ROOT}/datasets"
 HOST_DATASET_DIR=${GRAPHRAG_DATASET_DIR:-${DATASETS_ROOT}/graph/graphrag_bench_medical}
 HOST_LANCE_DATASETS=${GRAPHRAG_LANCE_DATASETS:-${HOST_DATASET_DIR}/parquet}
 HOST_KUZU_PATH=${KUZU_PATH:-${DATASETS_ROOT}/kuzu_medical.db}
+PYTHON_BIN="python3"
+if [[ -x "${REPO_ROOT}/.venv/bin/python" ]]; then
+  PYTHON_BIN="${REPO_ROOT}/.venv/bin/python"
+fi
 
 if [[ "$HOST_DATASET_DIR" != "$DATASETS_ROOT/"* ]]; then
   echo "GRAPHRAG_DATASET_DIR must live under ${DATASETS_ROOT}"
@@ -36,8 +40,10 @@ CONTAINER_KUZU_PATH="/app/datasets/${HOST_KUZU_PATH#${DATASETS_ROOT}/}"
 
 docker network inspect "$NETWORK_NAME" >/dev/null 2>&1 || docker network create "$NETWORK_NAME" >/dev/null
 
-# Build runner image once
-if ! docker image inspect "$IMAGE_NAME" >/dev/null 2>&1; then
+# Build runner image (use FORCE_REBUILD=1 to refresh)
+if [[ "${FORCE_REBUILD:-0}" == "1" ]]; then
+  docker build -t "$IMAGE_NAME" .
+elif ! docker image inspect "$IMAGE_NAME" >/dev/null 2>&1; then
   docker build -t "$IMAGE_NAME" .
 fi
 
@@ -96,6 +102,15 @@ for CORES in "${CORES_LIST[@]}"; do
       --embedding-dim 32 \
       --create-vector-index \
       --create-fulltext-index
+
+  echo "Resetting Kuzu dataset..."
+  rm -f "$HOST_KUZU_PATH" "$HOST_KUZU_PATH.wal"
+  "$PYTHON_BIN" scripts/ingest_kuzu.py \
+    --db "$HOST_KUZU_PATH" \
+    --dataset "$HOST_DATASET_DIR" \
+    --bulk \
+    --reset \
+    --embedding-dim 32
 
   # Run benchmark runner container
   docker run --rm \

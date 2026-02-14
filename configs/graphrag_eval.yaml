@@ -130,11 +130,11 @@ queries:
         RETURN count(*) AS n
       lance_graph:
         query: |
-          MATCH (d:Document)
-          RETURN d.id, d.title, d.embedding
+          MATCH (c:Chunk)
+          RETURN c.id, c.embedding
         vector_search:
           enabled: true
-          column: "d.embedding"
+          column: "c.embedding"
           metric: l2
           top_k_param: top_k
           vector_param: embedding

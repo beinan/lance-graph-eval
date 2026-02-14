@@ -216,7 +216,7 @@ def bulk_import(dataset_path: str, db_path: str, embedding_dim: int) -> None:
                     ("id", pa.string()),
                     ("document_id", pa.string()),
                     ("text", pa.string()),
-                    ("embedding", pa.fixed_size_list(pa.float32(), embedding_dim)),
+                    ("embedding", pa.list_(pa.float32(), embedding_dim)),
                     ("token_count", pa.int64()),
                     ("metadata_json", pa.string()),
                 ]
