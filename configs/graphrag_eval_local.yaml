@@ -109,6 +109,9 @@ queries:
     params:
       embedding_file: ${EMBEDDING_JSON}
       top_k: 10
+      vector_rerank: true
+      vector_column: "d.embedding"
+      distance_metric: l2
     expect:
       min_rows: 1
     fetch: scalar

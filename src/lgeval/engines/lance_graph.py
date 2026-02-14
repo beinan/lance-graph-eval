@@ -124,10 +124,13 @@ class LanceGraphEngine(BaseEngine):
             raise RuntimeError("lance_graph datasets not initialized")
 
         rendered = _render_query(query_text, params)
+        if params.get("vector_rerank"):
+            table = self._execute_with_vector_rerank(rendered, params)
+            if fetch == "scalar":
+                return QueryResult(row_count=table.num_rows)
+            return _table_to_result(table, fetch)
+
         table = self._engine.execute(rendered)
-        table, reranked = self._maybe_vector_rerank(table, params)
-        if reranked and fetch == "scalar":
-            return QueryResult(row_count=table.num_rows)
         return _table_to_result(table, fetch)
 
     def _build_graph_config(self, graph_spec: Dict[str, Any]):
@@ -216,6 +219,7 @@ class LanceGraphEngine(BaseEngine):
             return
         doc_table = datasets["Document"]
         if "embedding" in doc_table.schema.names:
+            datasets["Document"] = self._ensure_float32_embeddings(doc_table, "embedding")
             return
         chunk_table = datasets["Chunk"]
         if "embedding" not in chunk_table.schema.names or "document_id" not in chunk_table.schema.names:
@@ -248,63 +252,63 @@ class LanceGraphEngine(BaseEngine):
             else:
                 embeddings.append([value / count for value in total])
 
-        emb_array = self._pa.array(embeddings, type=self._pa.list_(self._pa.float64()))
+        emb_array = self._pa.array(embeddings, type=self._pa.list_(self._pa.float32()))
         datasets["Document"] = doc_table.append_column("embedding", emb_array)
 
-    def _maybe_vector_rerank(self, table, params: Dict[str, Any]):
-        if not params:
-            return table, False
+    def _ensure_float32_embeddings(self, table, column: str):
+        field = table.schema.field(column)
+        target_type = self._pa.list_(self._pa.float32())
+        if field.type == target_type:
+            return table
+        try:
+            casted = self._pc.cast(table[column], target_type)
+        except Exception:
+            values = []
+            for row in table[column].to_pylist():
+                if row is None:
+                    values.append(None)
+                else:
+                    values.append([float(v) for v in row])
+            casted = self._pa.array(values, type=target_type)
+        return table.set_column(table.schema.get_field_index(column), column, casted)
+
+    def _execute_with_vector_rerank(self, rendered: str, params: Dict[str, Any]):
+        if self._graph_config is None or self._datasets is None:
+            raise RuntimeError("lance_graph datasets not initialized")
+
+        try:
+            from lance_graph import CypherQuery, VectorSearch, DistanceMetric  # type: ignore
+        except ImportError as exc:
+            raise RuntimeError(
+                "lance-graph v0.5.2+ with CypherQuery is required. "
+                "Run: pip install lance-graph==0.5.2"
+            ) from exc
+
         query_vec = params.get("embedding")
         top_k = params.get("top_k")
         if query_vec is None or top_k is None:
-            return table, False
-        try:
-            top_k = int(top_k)
-        except (TypeError, ValueError):
-            return table, False
+            raise ValueError("vector_rerank requires embedding and top_k params")
+        top_k = int(top_k)
         if top_k <= 0:
-            return table, False
+            raise ValueError("top_k must be > 0 for vector_rerank")
 
-        embed_col = None
-        for name in table.schema.names:
-            if name == "embedding" or name.endswith(".embedding"):
-                embed_col = name
-                break
-        if embed_col is None:
-            return table, False
+        metric_name = str(params.get("metric") or params.get("distance_metric") or "l2").lower()
+        if metric_name in ("cosine", "cos"):
+            metric = DistanceMetric.Cosine
+        elif metric_name == "dot":
+            metric = DistanceMetric.Dot
+        else:
+            metric = DistanceMetric.L2
 
-        metric = str(params.get("metric") or params.get("distance_metric") or "l2").lower()
-        qvec = [float(v) for v in query_vec]
-
-        embeddings = table.column(embed_col).to_pylist()
-        scored = []
-        for idx, emb in enumerate(embeddings):
-            if emb is None:
-                continue
-            vec = [float(v) for v in emb]
-            if len(vec) != len(qvec):
-                continue
-            if metric in ("cosine", "cos"):
-                dot = sum(a * b for a, b in zip(qvec, vec))
-                qnorm = sum(a * a for a in qvec) ** 0.5
-                vnorm = sum(a * a for a in vec) ** 0.5
-                if qnorm == 0.0 or vnorm == 0.0:
-                    dist = 1.0
-                else:
-                    dist = 1.0 - (dot / (qnorm * vnorm))
-            else:
-                dist = 0.0
-                for a, b in zip(qvec, vec):
-                    diff = a - b
-                    dist += diff * diff
-            scored.append((dist, idx))
-
-        if not scored:
-            return table, False
-        scored.sort(key=lambda item: item[0])
-        keep = [idx for _, idx in scored[:top_k]]
-        indices = self._pa.array(keep, type=self._pa.int64())
-        return table.take(indices), True
+        vector_column = params.get("vector_column") or "d.embedding"
+        query = CypherQuery(rendered).with_config(self._graph_config)
+        vector_search = (
+            VectorSearch(vector_column)
+            .query_vector([float(v) for v in query_vec])
+            .metric(metric)
+            .top_k(top_k)
+        )
+        return query.execute_with_vector_rerank(self._datasets, vector_search)
 
 
 def _render_query(query_text: str, params: Dict[str, Any]) -> str:
