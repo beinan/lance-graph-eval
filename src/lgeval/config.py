@@ -48,6 +48,7 @@ class QuerySpec:
     fetch: str = "count"
     expect: Dict[str, Any] = field(default_factory=dict)
     pass_all_params: bool = False
+    vector_search: Dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass
@@ -135,6 +136,7 @@ def load_config(path: str) -> Config:
                 fetch=item.get("fetch", "count"),
                 expect=dict(item.get("expect", {})),
                 pass_all_params=bool(item.get("pass_all_params", False)),
+                vector_search=dict(item.get("vector_search", {})),
             )
         )
 

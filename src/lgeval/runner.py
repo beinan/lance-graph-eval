@@ -79,6 +79,35 @@ def _filter_params_for_query(query_text: str, params: Dict[str, object]) -> Dict
     return used
 
 
+def _apply_vector_search_params(params: Dict[str, object], vector_search: Dict[str, object]) -> Dict[str, object]:
+    if not vector_search or not vector_search.get("enabled"):
+        return params
+
+    merged = dict(params)
+    merged["vector_rerank"] = True
+
+    column = vector_search.get("column")
+    if column:
+        merged["vector_column"] = column
+
+    metric = vector_search.get("metric")
+    if metric:
+        merged["distance_metric"] = metric
+
+    if "top_k" in vector_search:
+        merged["top_k"] = vector_search.get("top_k")
+    else:
+        top_k_param = vector_search.get("top_k_param")
+        if top_k_param and top_k_param in merged:
+            merged["top_k"] = merged.get(top_k_param)
+
+    vector_param = vector_search.get("vector_param")
+    if vector_param and vector_param in merged:
+        merged["embedding"] = merged.get(vector_param)
+
+    return merged
+
+
 def _check_expect(row_count: Optional[float], expect: Dict[str, object]) -> (Optional[bool], Optional[str]):
     if not expect:
         return None, None
@@ -175,8 +204,10 @@ class BenchmarkRunner:
 
     def _run_query_suite(self, engine, engine_cfg: EngineConfig, query: QuerySpec, query_text: str) -> QueryReport:
         params = _resolve_params(query.params)
-        if not query.pass_all_params:
+        if not query.pass_all_params and not query.vector_search:
             params = _filter_params_for_query(query_text, params)
+        if engine_cfg.kind == "lance_graph":
+            params = _apply_vector_search_params(params, query.vector_search)
         expect = query.expect
 
         for _ in range(self.settings.warmups):
