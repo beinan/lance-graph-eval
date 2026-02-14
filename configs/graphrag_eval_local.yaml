@@ -91,6 +91,11 @@ engines:
       threadsafe: false
 
 setup:
+  - name: kuzu_vector
+    per_engine:
+      kuzu:
+        - "LOAD VECTOR;"
+        - "CALL CREATE_VECTOR_INDEX('Chunk', 'chunk_embedding', 'embedding');"
   - name: vector_index
     per_engine:
       neo4j: |
@@ -119,7 +124,9 @@ queries:
         MATCH (node)-[:MENTIONS]->(e:Entity)
         RETURN count(*) AS n
       kuzu: |
-        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity)
+        CALL QUERY_VECTOR_INDEX('Chunk', 'chunk_embedding', $embedding, $top_k)
+        YIELD node, distance
+        MATCH (node)-[:MENTIONS]->(e:Entity)
         RETURN count(*) AS n
       lance_graph:
         query: |

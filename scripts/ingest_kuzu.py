@@ -54,10 +54,10 @@ def derive_has_chunk_edges(chunks: List[Dict[str, object]]) -> List[Dict[str, ob
     return edges
 
 
-def ensure_schema(conn) -> None:
+def ensure_schema(conn, embedding_dim: int) -> None:
     statements = [
         "CREATE NODE TABLE Document(id STRING, title STRING, text STRING, metadata_json STRING, PRIMARY KEY(id))",
-        "CREATE NODE TABLE Chunk(id STRING, document_id STRING, text STRING, embedding DOUBLE[], token_count INT64, metadata_json STRING, PRIMARY KEY(id))",
+        f"CREATE NODE TABLE Chunk(id STRING, document_id STRING, text STRING, embedding FLOAT[{embedding_dim}], token_count INT64, metadata_json STRING, PRIMARY KEY(id))",
         "CREATE NODE TABLE Entity(id STRING, name STRING, type STRING, metadata_json STRING, PRIMARY KEY(id))",
         "CREATE NODE TABLE Community(id STRING, level INT64, summary STRING, metadata_json STRING, PRIMARY KEY(id))",
     ]
@@ -175,7 +175,7 @@ def _copy_table(conn, table: str, path: str) -> None:
     conn.execute(f'COPY {table} FROM "{path}"')
 
 
-def bulk_import(dataset_path: str, db_path: str) -> None:
+def bulk_import(dataset_path: str, db_path: str, embedding_dim: int) -> None:
     try:
         import pyarrow as pa
         import pyarrow.parquet as pq
@@ -189,7 +189,7 @@ def bulk_import(dataset_path: str, db_path: str) -> None:
 
     db = kuzu.Database(db_path)
     conn = kuzu.Connection(db)
-    ensure_schema(conn)
+    ensure_schema(conn, embedding_dim)
 
     with tempfile.TemporaryDirectory() as temp_dir:
         nodes_out_dir = os.path.join(temp_dir, "kuzu_nodes")
@@ -210,17 +210,17 @@ def bulk_import(dataset_path: str, db_path: str) -> None:
                 ),
             ),
             "Chunk": (
-                "chunks.jsonl",
-                pa.schema(
-                    [
-                        ("id", pa.string()),
-                        ("document_id", pa.string()),
-                        ("text", pa.string()),
-                        ("embedding", pa.list_(pa.float64())),
-                        ("token_count", pa.int64()),
-                        ("metadata_json", pa.string()),
-                    ]
-                ),
+            "chunks.jsonl",
+            pa.schema(
+                [
+                    ("id", pa.string()),
+                    ("document_id", pa.string()),
+                    ("text", pa.string()),
+                    ("embedding", pa.fixed_size_list(pa.float32(), embedding_dim)),
+                    ("token_count", pa.int64()),
+                    ("metadata_json", pa.string()),
+                ]
+            ),
             ),
             "Entity": (
                 "entities.jsonl",
@@ -264,14 +264,14 @@ def bulk_import(dataset_path: str, db_path: str) -> None:
                     )
                 elif label == "Chunk":
                     rows.append(
-                        {
-                            "id": row.get("id"),
-                            "document_id": row.get("document_id"),
-                            "text": row.get("text"),
-                            "embedding": row.get("embedding"),
-                            "token_count": row.get("token_count"),
-                            "metadata_json": metadata_json,
-                        }
+                    {
+                        "id": row.get("id"),
+                        "document_id": row.get("document_id"),
+                        "text": row.get("text"),
+                        "embedding": [float(v) for v in (row.get("embedding") or [])],
+                        "token_count": row.get("token_count"),
+                        "metadata_json": metadata_json,
+                    }
                     )
                 elif label == "Entity":
                     rows.append(
@@ -346,6 +346,7 @@ def main() -> int:
     parser.add_argument("--db", required=True, help="Path to Kuzu database")
     parser.add_argument("--dataset", required=True)
     parser.add_argument("--derive-has-chunk", action="store_true")
+    parser.add_argument("--embedding-dim", type=int, default=32)
     parser.add_argument("--bulk", action="store_true", help="Use COPY FROM with parquet inputs.")
     parser.add_argument("--reset", action="store_true", help="Delete existing DB before ingest.")
     args = parser.parse_args()
@@ -361,7 +362,7 @@ def main() -> int:
             os.remove(wal_path)
 
     if args.bulk:
-        bulk_import(args.dataset, args.db)
+        bulk_import(args.dataset, args.db, args.embedding_dim)
         return 0
 
     try:
@@ -376,7 +377,7 @@ def main() -> int:
     db = kuzu.Database(args.db)
     conn = kuzu.Connection(db)
 
-    ensure_schema(conn)
+    ensure_schema(conn, args.embedding_dim)
 
     for row in payload["documents"]:
         insert_node(conn, "Document", row)

@@ -123,6 +123,8 @@ python3 scripts/prepare_parquet.py --dataset datasets/graph/graphrag_bench_cs
 python3 scripts/ingest_kuzu.py --db datasets/kuzu_cs.db --dataset datasets/graph/graphrag_bench_cs --bulk --reset
 ```
 
+Note: Kuzu vector indexes require fixed-length arrays. Use `--embedding-dim` to match your embedding size.
+
 To run the benchmark against the CS variant, set:
 
 ```bash
