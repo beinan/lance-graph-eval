@@ -109,6 +109,12 @@ def _apply_vector_search_params(params: Dict[str, object], vector_search: Dict[s
 
 
 def _select_vector_search(query: QuerySpec, engine_cfg: EngineConfig) -> Dict[str, object]:
+    entry = query.texts.get(engine_cfg.kind)
+    if isinstance(entry, dict):
+        vs = entry.get("vector_search")
+        if isinstance(vs, dict):
+            return vs
+
     if query.vector_search:
         return query.vector_search
     options = engine_cfg.options or {}
@@ -195,7 +201,13 @@ class BenchmarkRunner:
             try:
                 self._run_setup(engine, engine_cfg)
                 for query in self.queries:
-                    query_text = query.texts.get(engine_cfg.kind)
+                    entry = query.texts.get(engine_cfg.kind)
+                    if not entry:
+                        continue
+                    if isinstance(entry, dict):
+                        query_text = entry.get("query") or entry.get("cypher") or entry.get("text")
+                    else:
+                        query_text = entry
                     if not query_text:
                         continue
                     report = self._run_query_suite(engine, engine_cfg, query, query_text)

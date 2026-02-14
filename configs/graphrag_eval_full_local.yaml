@@ -59,13 +59,6 @@ engines:
     options:
       mode: datasets
       datasets_dir: ${GRAPHRAG_LANCE_DATASETS}
-      vector_search:
-        hybrid_search:
-          enabled: true
-          column: "d.embedding"
-          metric: l2
-          top_k_param: top_k
-          vector_param: embedding
       tables:
         Document: documents.parquet
         Chunk: chunks.parquet
@@ -128,9 +121,16 @@ queries:
       kuzu: |
         MATCH (c:Chunk)-[:MENTIONS]->(e:Entity)
         RETURN count(*) AS n
-      lance_graph: |
-        MATCH (d:Document)
-        RETURN d.id, d.title, d.embedding
+      lance_graph:
+        query: |
+          MATCH (d:Document)
+          RETURN d.id, d.title, d.embedding
+        vector_search:
+          enabled: true
+          column: "d.embedding"
+          metric: l2
+          top_k_param: top_k
+          vector_param: embedding
   - name: local_search_2hop
     tags: [local, traversal]
     params:

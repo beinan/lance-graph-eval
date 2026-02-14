@@ -42,7 +42,7 @@ class SetupStep:
 @dataclass
 class QuerySpec:
     name: str
-    texts: Dict[str, str]
+    texts: Dict[str, Any]
     params: Dict[str, Any] = field(default_factory=dict)
     tags: List[str] = field(default_factory=list)
     fetch: str = "count"
