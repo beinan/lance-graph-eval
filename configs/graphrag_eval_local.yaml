@@ -59,6 +59,13 @@ engines:
     options:
       mode: datasets
       datasets_dir: ${GRAPHRAG_LANCE_DATASETS}
+      vector_search:
+        hybrid_search:
+          enabled: true
+          column: "d.embedding"
+          metric: l2
+          top_k_param: top_k
+          vector_param: embedding
       tables:
         Document: documents.parquet
         Chunk: chunks.parquet
@@ -109,12 +116,6 @@ queries:
     params:
       embedding_file: ${EMBEDDING_JSON}
       top_k: 10
-    vector_search:
-      enabled: true
-      column: "d.embedding"
-      metric: l2
-      top_k_param: top_k
-      vector_param: embedding
     expect:
       min_rows: 1
     fetch: scalar

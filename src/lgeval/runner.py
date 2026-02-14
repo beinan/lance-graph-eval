@@ -108,6 +108,22 @@ def _apply_vector_search_params(params: Dict[str, object], vector_search: Dict[s
     return merged
 
 
+def _select_vector_search(query: QuerySpec, engine_cfg: EngineConfig) -> Dict[str, object]:
+    if query.vector_search:
+        return query.vector_search
+    options = engine_cfg.options or {}
+    vs = options.get("vector_search")
+    if not vs:
+        return {}
+    if isinstance(vs, dict):
+        if "enabled" in vs:
+            return vs
+        if query.name in vs:
+            return vs.get(query.name, {})
+        return vs.get("default", {}) or {}
+    return {}
+
+
 def _check_expect(row_count: Optional[float], expect: Dict[str, object]) -> (Optional[bool], Optional[str]):
     if not expect:
         return None, None
@@ -204,10 +220,11 @@ class BenchmarkRunner:
 
     def _run_query_suite(self, engine, engine_cfg: EngineConfig, query: QuerySpec, query_text: str) -> QueryReport:
         params = _resolve_params(query.params)
-        if not query.pass_all_params and not query.vector_search:
+        vector_search = _select_vector_search(query, engine_cfg)
+        if not query.pass_all_params and not vector_search:
             params = _filter_params_for_query(query_text, params)
         if engine_cfg.kind == "lance_graph":
-            params = _apply_vector_search_params(params, query.vector_search)
+            params = _apply_vector_search_params(params, vector_search)
         expect = query.expect
 
         for _ in range(self.settings.warmups):
