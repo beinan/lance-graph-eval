@@ -112,6 +112,7 @@ queries:
       vector_rerank: true
       vector_column: "d.embedding"
       distance_metric: l2
+    pass_all_params: true
     expect:
       min_rows: 1
     fetch: scalar

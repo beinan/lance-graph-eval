@@ -47,6 +47,7 @@ class QuerySpec:
     tags: List[str] = field(default_factory=list)
     fetch: str = "count"
     expect: Dict[str, Any] = field(default_factory=dict)
+    pass_all_params: bool = False
 
 
 @dataclass
@@ -133,6 +134,7 @@ def load_config(path: str) -> Config:
                 tags=list(item.get("tags", [])),
                 fetch=item.get("fetch", "count"),
                 expect=dict(item.get("expect", {})),
+                pass_all_params=bool(item.get("pass_all_params", False)),
             )
         )
 

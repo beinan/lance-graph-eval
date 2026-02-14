@@ -175,7 +175,7 @@ class BenchmarkRunner:
 
     def _run_query_suite(self, engine, engine_cfg: EngineConfig, query: QuerySpec, query_text: str) -> QueryReport:
         params = _resolve_params(query.params)
-        if engine_cfg.kind != "lance_graph":
+        if not query.pass_all_params:
             params = _filter_params_for_query(query_text, params)
         expect = query.expect
 
