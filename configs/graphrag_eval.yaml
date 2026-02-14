@@ -122,8 +122,8 @@ queries:
         MATCH (c:Chunk)-[:MENTIONS]->(e:Entity)
         RETURN count(*) AS n
       lance_graph: |
-        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity)
-        RETURN count(*) AS n
+        MATCH (d:Document)
+        RETURN d.id, d.title, d.embedding
   - name: local_search_2hop
     tags: [local, traversal]
     params:

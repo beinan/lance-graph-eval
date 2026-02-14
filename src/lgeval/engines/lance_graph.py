@@ -125,6 +125,9 @@ class LanceGraphEngine(BaseEngine):
 
         rendered = _render_query(query_text, params)
         table = self._engine.execute(rendered)
+        table, reranked = self._maybe_vector_rerank(table, params)
+        if reranked and fetch == "scalar":
+            return QueryResult(row_count=table.num_rows)
         return _table_to_result(table, fetch)
 
     def _build_graph_config(self, graph_spec: Dict[str, Any]):
@@ -178,6 +181,7 @@ class LanceGraphEngine(BaseEngine):
             else:
                 datasets[name] = self._read_table(name)
 
+        self._maybe_attach_document_embeddings(datasets)
         return datasets
 
     def _read_table(self, key: str):
@@ -206,6 +210,101 @@ class LanceGraphEngine(BaseEngine):
             raise ValueError(f"edges table missing type field: {type_field}")
         mask = self._pc.equal(table[type_field], self._pa.scalar(rel_name))
         return table.filter(mask)
+
+    def _maybe_attach_document_embeddings(self, datasets: Dict[str, Any]) -> None:
+        if "Document" not in datasets or "Chunk" not in datasets:
+            return
+        doc_table = datasets["Document"]
+        if "embedding" in doc_table.schema.names:
+            return
+        chunk_table = datasets["Chunk"]
+        if "embedding" not in chunk_table.schema.names or "document_id" not in chunk_table.schema.names:
+            return
+
+        doc_ids = doc_table.column("id").to_pylist()
+        chunk_doc_ids = chunk_table.column("document_id").to_pylist()
+        chunk_embeddings = chunk_table.column("embedding").to_pylist()
+
+        sums: Dict[str, list] = {}
+        counts: Dict[str, int] = {}
+        for doc_id, emb in zip(chunk_doc_ids, chunk_embeddings):
+            if doc_id is None or emb is None:
+                continue
+            vec = [float(v) for v in emb]
+            if doc_id not in sums:
+                sums[doc_id] = [0.0] * len(vec)
+                counts[doc_id] = 0
+            acc = sums[doc_id]
+            for idx, value in enumerate(vec):
+                acc[idx] += value
+            counts[doc_id] += 1
+
+        embeddings = []
+        for doc_id in doc_ids:
+            total = sums.get(doc_id)
+            count = counts.get(doc_id, 0)
+            if total is None or count == 0:
+                embeddings.append(None)
+            else:
+                embeddings.append([value / count for value in total])
+
+        emb_array = self._pa.array(embeddings, type=self._pa.list_(self._pa.float64()))
+        datasets["Document"] = doc_table.append_column("embedding", emb_array)
+
+    def _maybe_vector_rerank(self, table, params: Dict[str, Any]):
+        if not params:
+            return table, False
+        query_vec = params.get("embedding")
+        top_k = params.get("top_k")
+        if query_vec is None or top_k is None:
+            return table, False
+        try:
+            top_k = int(top_k)
+        except (TypeError, ValueError):
+            return table, False
+        if top_k <= 0:
+            return table, False
+
+        embed_col = None
+        for name in table.schema.names:
+            if name == "embedding" or name.endswith(".embedding"):
+                embed_col = name
+                break
+        if embed_col is None:
+            return table, False
+
+        metric = str(params.get("metric") or params.get("distance_metric") or "l2").lower()
+        qvec = [float(v) for v in query_vec]
+
+        embeddings = table.column(embed_col).to_pylist()
+        scored = []
+        for idx, emb in enumerate(embeddings):
+            if emb is None:
+                continue
+            vec = [float(v) for v in emb]
+            if len(vec) != len(qvec):
+                continue
+            if metric in ("cosine", "cos"):
+                dot = sum(a * b for a, b in zip(qvec, vec))
+                qnorm = sum(a * a for a in qvec) ** 0.5
+                vnorm = sum(a * a for a in vec) ** 0.5
+                if qnorm == 0.0 or vnorm == 0.0:
+                    dist = 1.0
+                else:
+                    dist = 1.0 - (dot / (qnorm * vnorm))
+            else:
+                dist = 0.0
+                for a, b in zip(qvec, vec):
+                    diff = a - b
+                    dist += diff * diff
+            scored.append((dist, idx))
+
+        if not scored:
+            return table, False
+        scored.sort(key=lambda item: item[0])
+        keep = [idx for _, idx in scored[:top_k]]
+        indices = self._pa.array(keep, type=self._pa.int64())
+        return table.take(indices), True
 
 
 def _render_query(query_text: str, params: Dict[str, Any]) -> str:
