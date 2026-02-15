@@ -55,6 +55,7 @@ engines:
       path: ${KUZU_PATH}
       threadsafe: true
       engine_pool: true
+      pool_size: 1
   - name: lance_graph_local
     kind: lance_graph
     options:
@@ -91,6 +92,7 @@ engines:
             from_edges: edges
       threadsafe: true
       engine_pool: true
+      pool_size: 1
 
 setup:
   - name: kuzu_vector
