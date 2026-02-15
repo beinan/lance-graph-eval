@@ -1,0 +1,16 @@
+engine,query,tags,platform,python,cpu_count,memory_total_mb,count,mean_ms,stdev_ms,min_ms,max_ms,p50_ms,p95_ms,p99_ms,errors,expect_failures
+neo4j_local,hybrid_search,"hybrid,vector,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,11.902,12.366,3.726,47.206,5.858,37.508,44.569,0,0
+neo4j_local,local_search_2hop,"local,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,7.776,5.082,3.485,20.123,5.227,17.399,19.445,0,0
+neo4j_local,parent_child_enrichment,"context,parent",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,6.136,2.542,3.565,13.323,5.310,11.814,13.081,0,0
+neo4j_local,global_search,"global,aggregation",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,4.182,1.390,2.389,8.605,3.678,6.356,7.964,0,0
+neo4j_local,deep_traversal_5hop,"deep,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,29.586,4.040,27.082,42.142,27.915,39.964,41.577,0,0
+kuzu_local,hybrid_search,"hybrid,vector,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,2.033,0.635,1.594,4.016,1.822,3.658,3.950,0,0
+kuzu_local,local_search_2hop,"local,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,5.991,1.259,2.537,8.651,6.523,6.984,8.172,0,0
+kuzu_local,parent_child_enrichment,"context,parent",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,3.725,0.994,2.307,5.555,4.413,4.822,5.347,0,0
+kuzu_local,global_search,"global,aggregation",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,2.593,1.167,1.311,5.559,3.175,3.733,5.043,0,0
+kuzu_local,deep_traversal_5hop,"deep,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,36.909,2.486,30.613,41.154,37.135,40.705,41.037,0,0
+lance_graph_local,hybrid_search,"hybrid,vector,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,1.072,0.023,1.046,1.154,1.068,1.107,1.141,0,0
+lance_graph_local,local_search_2hop,"local,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,3.885,0.238,3.452,4.575,3.822,4.336,4.528,0,0
+lance_graph_local,parent_child_enrichment,"context,parent",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,3.130,0.133,2.854,3.367,3.127,3.346,3.364,0,0
+lance_graph_local,global_search,"global,aggregation",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,1.238,0.034,1.175,1.306,1.234,1.288,1.302,0,0
+lance_graph_local,deep_traversal_5hop,"deep,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,28.073,1.413,25.054,30.861,28.474,29.896,30.606,0,0

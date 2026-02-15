@@ -28,6 +28,12 @@ benchmark runner. Use the sweep script (uses `docker run` to avoid compose compa
 ```
 
 This runs 1/2/4/32/96 core sweeps with the same CPU pinning for Neo4j and the runner.
+By default it uses the medical dataset. To sweep a different dataset, set:
+
+```bash
+DATASET_FLAVOR=novel ./scripts/run_core_sweep.sh
+DATASET_FLAVOR=cs ./scripts/run_core_sweep.sh
+```
 
 Summarize sweep results into one CSV:
 

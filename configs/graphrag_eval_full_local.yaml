@@ -95,7 +95,7 @@ setup:
     per_engine:
       kuzu:
         - "LOAD VECTOR;"
-        - "CALL CREATE_VECTOR_INDEX('Chunk', 'chunk_embedding', 'embedding');"
+        - "CALL CREATE_VECTOR_INDEX('Chunk', 'chunk_embedding', 'embedding', metric := 'cosine');"
   - name: vector_index
     per_engine:
       neo4j: |
@@ -171,11 +171,20 @@ queries:
         MATCH (node)-[:PARENT_OF]->(p:Document)
         RETURN count(*) AS n
       kuzu: |
-        MATCH (c:Chunk)-[:PARENT_OF]->(p:Document)
+        CALL QUERY_VECTOR_INDEX('Chunk', 'chunk_embedding', $embedding, $top_k)
+        YIELD node, distance
+        MATCH (node)-[:PARENT_OF]->(p:Document)
         RETURN count(*) AS n
-      lance_graph: |
-        MATCH (c:Chunk)-[:PARENT_OF]->(p:Document)
-        RETURN count(*) AS n
+      lance_graph:
+        query: |
+          MATCH (c:Chunk)-[:PARENT_OF]->(p:Document)
+          RETURN c.id, c.embedding, p.id
+        vector_search:
+          enabled: true
+          column: "c.embedding"
+          metric: cosine
+          top_k_param: top_k
+          vector_param: embedding
   - name: global_search
     tags: [global, aggregation]
     params:
@@ -203,17 +212,20 @@ queries:
     fetch: scalar
     texts:
       neo4j: |
-        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})
-        MATCH (c)-[:MENTIONS]->(e)<-[:MENTIONS]-(c2:Chunk)-[:PARENT_OF]->(d:Document)
-              -[:HAS_CHUNK]->(c3:Chunk)-[:MENTIONS]->(e2:Entity)
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})<-[:MENTIONS]-(c2:Chunk)
+              -[:PARENT_OF]->(d:Document)-[:HAS_CHUNK]->(c3:Chunk)-[:MENTIONS]->(e2:Entity)
+        WHERE c.id <> c2.id
+          AND (e2.id <> e.id OR (c3.id <> c.id AND c3.id <> c2.id))
         RETURN count(*) AS n
       kuzu: |
-        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})
-        MATCH (c)-[:MENTIONS]->(e)<-[:MENTIONS]-(c2:Chunk)-[:PARENT_OF]->(d:Document)
-              -[:HAS_CHUNK]->(c3:Chunk)-[:MENTIONS]->(e2:Entity)
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})<-[:MENTIONS]-(c2:Chunk)
+              -[:PARENT_OF]->(d:Document)-[:HAS_CHUNK]->(c3:Chunk)-[:MENTIONS]->(e2:Entity)
+        WHERE c.id <> c2.id
+          AND (e2.id <> e.id OR (c3.id <> c.id AND c3.id <> c2.id))
         RETURN count(*) AS n
       lance_graph: |
-        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})
-        MATCH (c)-[:MENTIONS]->(e)<-[:MENTIONS]-(c2:Chunk)-[:PARENT_OF]->(d:Document)
-              -[:HAS_CHUNK]->(c3:Chunk)-[:MENTIONS]->(e2:Entity)
+        MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})<-[:MENTIONS]-(c2:Chunk)
+              -[:PARENT_OF]->(d:Document)-[:HAS_CHUNK]->(c3:Chunk)-[:MENTIONS]->(e2:Entity)
+        WHERE c.id <> c2.id
+          AND (e2.id <> e.id OR (c3.id <> c.id AND c3.id <> c2.id))
         RETURN count(*) AS n

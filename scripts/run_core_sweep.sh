@@ -13,9 +13,31 @@ NEO4J_DATABASE_VAL=${NEO4J_DATABASE:-neo4j}
 
 REPO_ROOT="$(pwd)"
 DATASETS_ROOT="${REPO_ROOT}/datasets"
-HOST_DATASET_DIR=${GRAPHRAG_DATASET_DIR:-${DATASETS_ROOT}/graph/graphrag_bench_medical}
+HOST_MEDICAL_DATASET_DIR=${GRAPHRAG_MEDICAL_PATH:-${DATASETS_ROOT}/graph/graphrag_bench_medical}
+HOST_NOVEL_DATASET_DIR=${GRAPHRAG_NOVEL_PATH:-${DATASETS_ROOT}/graph/graphrag_bench_novel}
+HOST_CS_DATASET_DIR=${GRAPHRAG_CS_PATH:-${DATASETS_ROOT}/graph/graphrag_bench_cs}
+DATASET_FLAVOR=${DATASET_FLAVOR:-medical}
+
+case "$DATASET_FLAVOR" in
+  medical)
+    HOST_DATASET_DIR=${GRAPHRAG_DATASET_DIR:-$HOST_MEDICAL_DATASET_DIR}
+    HOST_KUZU_PATH=${KUZU_PATH:-${DATASETS_ROOT}/kuzu_medical.db}
+    ;;
+  novel)
+    HOST_DATASET_DIR=${GRAPHRAG_DATASET_DIR:-$HOST_NOVEL_DATASET_DIR}
+    HOST_KUZU_PATH=${KUZU_PATH:-${DATASETS_ROOT}/kuzu_novel.db}
+    ;;
+  cs)
+    HOST_DATASET_DIR=${GRAPHRAG_DATASET_DIR:-$HOST_CS_DATASET_DIR}
+    HOST_KUZU_PATH=${KUZU_PATH:-${DATASETS_ROOT}/kuzu_cs.db}
+    ;;
+  *)
+    echo "Unsupported DATASET_FLAVOR: $DATASET_FLAVOR (expected: medical|novel|cs)"
+    exit 1
+    ;;
+esac
+
 HOST_LANCE_DATASETS=${GRAPHRAG_LANCE_DATASETS:-${HOST_DATASET_DIR}/parquet}
-HOST_KUZU_PATH=${KUZU_PATH:-${DATASETS_ROOT}/kuzu_medical.db}
 PYTHON_BIN="python3"
 if [[ -x "${REPO_ROOT}/.venv/bin/python" ]]; then
   PYTHON_BIN="${REPO_ROOT}/.venv/bin/python"
@@ -23,6 +45,18 @@ fi
 
 if [[ "$HOST_DATASET_DIR" != "$DATASETS_ROOT/"* ]]; then
   echo "GRAPHRAG_DATASET_DIR must live under ${DATASETS_ROOT}"
+  exit 1
+fi
+if [[ "$HOST_MEDICAL_DATASET_DIR" != "$DATASETS_ROOT/"* ]]; then
+  echo "GRAPHRAG_MEDICAL_PATH must live under ${DATASETS_ROOT}"
+  exit 1
+fi
+if [[ "$HOST_NOVEL_DATASET_DIR" != "$DATASETS_ROOT/"* ]]; then
+  echo "GRAPHRAG_NOVEL_PATH must live under ${DATASETS_ROOT}"
+  exit 1
+fi
+if [[ "$HOST_CS_DATASET_DIR" != "$DATASETS_ROOT/"* ]]; then
+  echo "GRAPHRAG_CS_PATH must live under ${DATASETS_ROOT}"
   exit 1
 fi
 if [[ "$HOST_LANCE_DATASETS" != "$DATASETS_ROOT/"* ]]; then
@@ -35,6 +69,9 @@ if [[ "$HOST_KUZU_PATH" != "$DATASETS_ROOT/"* ]]; then
 fi
 
 CONTAINER_DATASET_DIR="/app/datasets/${HOST_DATASET_DIR#${DATASETS_ROOT}/}"
+CONTAINER_MEDICAL_DATASET_DIR="/app/datasets/${HOST_MEDICAL_DATASET_DIR#${DATASETS_ROOT}/}"
+CONTAINER_NOVEL_DATASET_DIR="/app/datasets/${HOST_NOVEL_DATASET_DIR#${DATASETS_ROOT}/}"
+CONTAINER_CS_DATASET_DIR="/app/datasets/${HOST_CS_DATASET_DIR#${DATASETS_ROOT}/}"
 CONTAINER_LANCE_DATASETS="/app/datasets/${HOST_LANCE_DATASETS#${DATASETS_ROOT}/}"
 CONTAINER_KUZU_PATH="/app/datasets/${HOST_KUZU_PATH#${DATASETS_ROOT}/}"
 
@@ -58,6 +95,7 @@ for CORES in "${CORES_LIST[@]}"; do
 
   # Cleanup any existing neo4j container
   docker rm -f "$NEO4J_CONTAINER" >/dev/null 2>&1 || true
+  docker volume rm -f neo4j_data neo4j_logs >/dev/null 2>&1 || true
 
   # Start neo4j with pinned CPUs
   docker run -d --name "$NEO4J_CONTAINER" \
@@ -118,9 +156,9 @@ for CORES in "${CORES_LIST[@]}"; do
     --network "$NETWORK_NAME" \
     --cpuset-cpus "$CPUSET" --cpus "$CORES" \
     -e EMBEDDING_JSON=/app/datasets/embedding.json \
-    -e GRAPHRAG_MEDICAL_PATH="$CONTAINER_DATASET_DIR" \
-    -e GRAPHRAG_NOVEL_PATH="$CONTAINER_DATASET_DIR" \
-    -e GRAPHRAG_CS_PATH="$CONTAINER_DATASET_DIR" \
+    -e GRAPHRAG_MEDICAL_PATH="$CONTAINER_MEDICAL_DATASET_DIR" \
+    -e GRAPHRAG_NOVEL_PATH="$CONTAINER_NOVEL_DATASET_DIR" \
+    -e GRAPHRAG_CS_PATH="$CONTAINER_CS_DATASET_DIR" \
     -e GRAPHRAG_LANCE_DATASETS="$CONTAINER_LANCE_DATASETS" \
     -e KUZU_PATH="$CONTAINER_KUZU_PATH" \
     -e NEO4J_URI="bolt://$NEO4J_CONTAINER:7687" \
