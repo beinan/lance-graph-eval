@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import os
+import re
 import shlex
 import subprocess
 from typing import Any, Dict, Optional
@@ -23,6 +24,9 @@ class LanceGraphEngine(BaseEngine):
         self._graph_config = None
         self._knowledge_graph = None
         self._engine = None
+        self._label_to_id_field: Dict[str, str] = {}
+        self._label_to_table_key: Dict[str, str] = {}
+        self._lance_datasets: Dict[str, Any] = {}
 
     def connect(self) -> None:
         if self._mode == "cli":
@@ -152,6 +156,7 @@ class LanceGraphEngine(BaseEngine):
         for node in nodes:
             label = node["label"]
             id_field = node.get("id_field", "id")
+            self._label_to_id_field[label] = id_field
             builder = builder.with_node_label(label, id_field)
 
         for rel in rels:
@@ -173,7 +178,17 @@ class LanceGraphEngine(BaseEngine):
         for node in nodes:
             label = node["label"]
             table_key = node.get("table", label)
-            datasets[label] = self._read_table(table_key)
+            self._label_to_table_key[label] = table_key
+            if self._mode == "lance":
+                path = self._resolve_table_path(table_key)
+                if self._lance is None:
+                    raise RuntimeError("lance not initialized")
+                dataset = self._lance.dataset(path)
+                self._lance_datasets[label] = dataset
+                table = dataset.to_table()
+            else:
+                table = self._read_table(table_key)
+            datasets[label] = self._maybe_cast_embeddings(table)
 
         edges_cache = {}
         for rel in rels:
@@ -246,6 +261,7 @@ class LanceGraphEngine(BaseEngine):
         chunk_table = datasets["Chunk"]
         if "embedding" not in chunk_table.schema.names or "document_id" not in chunk_table.schema.names:
             return
+        target_type = self._embedding_target_type(chunk_table.schema.field("embedding").type)
 
         doc_ids = doc_table.column("id").to_pylist()
         chunk_doc_ids = chunk_table.column("document_id").to_pylist()
@@ -274,12 +290,30 @@ class LanceGraphEngine(BaseEngine):
             else:
                 embeddings.append([value / count for value in total])
 
-        emb_array = self._pa.array(embeddings, type=self._pa.list_(self._pa.float32()))
+        emb_array = self._pa.array(embeddings, type=target_type)
         datasets["Document"] = doc_table.append_column("embedding", emb_array)
+
+    def _embedding_target_type(self, field_type):
+        if getattr(self._pa.types, "is_fixed_shape_tensor", None) and self._pa.types.is_fixed_shape_tensor(
+            field_type
+        ):
+            if field_type.value_type == self._pa.float32():
+                return field_type
+            return field_type
+        if self._pa.types.is_fixed_size_list(field_type):
+            list_size = field_type.list_size
+            if field_type.value_type == self._pa.float32():
+                return field_type
+            return self._pa.list_(self._pa.float32(), list_size)
+        if self._pa.types.is_list(field_type) or self._pa.types.is_large_list(field_type):
+            if field_type.value_type == self._pa.float32():
+                return field_type
+            return self._pa.list_(self._pa.float32())
+        return self._pa.list_(self._pa.float32())
 
     def _ensure_float32_embeddings(self, table, column: str):
         field = table.schema.field(column)
-        target_type = self._pa.list_(self._pa.float32())
+        target_type = self._embedding_target_type(field.type)
         if field.type == target_type:
             return table
         try:
@@ -337,6 +371,8 @@ class LanceGraphEngine(BaseEngine):
                         f"vector_search requires {label}.embedding; ensure embeddings exist "
                         "or use a different vector_column."
                     )
+        if self._mode == "lance" and self.options.get("use_lance_index", True):
+            return self._execute_with_lance_index(rendered, params, metric_name)
         query = CypherQuery(rendered).with_config(self._graph_config)
         vector_search = (
             VectorSearch(vector_column)
@@ -345,6 +381,65 @@ class LanceGraphEngine(BaseEngine):
             .top_k(top_k)
         )
         return query.execute_with_vector_rerank(self._datasets, vector_search)
+
+    def _execute_with_lance_index(self, rendered: str, params: Dict[str, Any], metric_name: str):
+        if self._lance is None:
+            raise RuntimeError("lance not initialized")
+        vector_column = params.get("vector_column") or "d.embedding"
+        if "." in vector_column:
+            alias, column = vector_column.split(".", 1)
+        else:
+            alias, column = vector_column, vector_column
+
+        alias_map = self._alias_to_label(rendered)
+        label = alias_map.get(alias)
+        if label is None and alias in self._label_to_id_field:
+            label = alias
+        if label is None:
+            raise RuntimeError(f"Unable to resolve label for vector column alias '{alias}'")
+
+        id_field = self._label_to_id_field.get(label, "id")
+        if label not in self._label_to_table_key:
+            raise RuntimeError(f"No table mapping for label {label}")
+        dataset = self._lance_datasets.get(label)
+        if dataset is None:
+            path = self._resolve_table_path(self._label_to_table_key[label])
+            dataset = self._lance.dataset(path)
+
+        query_vec = [float(v) for v in params.get("embedding", [])]
+        top_k = int(params.get("top_k", 0))
+        if not query_vec or top_k <= 0:
+            raise ValueError("vector_rerank requires embedding and top_k params")
+
+        nearest = {
+            "column": column,
+            "q": query_vec,
+            "k": top_k,
+            "metric": metric_name,
+            "use_index": True,
+        }
+        ids_table = dataset.to_table(
+            columns=[id_field],
+            nearest=nearest,
+            disable_scoring_autoprojection=True,
+        )
+        ids = ids_table.column(id_field).to_pylist()
+
+        table = self._datasets[label]
+        mask = self._pc.is_in(table[id_field], value_set=self._pa.array(ids))
+        filtered = table.filter(mask)
+        filtered_datasets = dict(self._datasets)
+        filtered_datasets[label] = filtered
+
+        from lance_graph import CypherQuery  # type: ignore
+
+        cypher_query = CypherQuery(rendered).with_config(self._graph_config)
+        return cypher_query.execute(filtered_datasets)
+
+    @staticmethod
+    def _alias_to_label(query_text: str) -> Dict[str, str]:
+        pattern = re.compile(r"\(\s*([A-Za-z_][A-Za-z0-9_]*)\s*:\s*([A-Za-z_][A-Za-z0-9_]*)\s*\)")
+        return {match.group(1): match.group(2) for match in pattern.finditer(query_text)}
 
 
 def _render_query(query_text: str, params: Dict[str, Any]) -> str:

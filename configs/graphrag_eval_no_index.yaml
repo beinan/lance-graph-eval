@@ -60,6 +60,7 @@ engines:
     kind: lance_graph
     options:
       mode: lance
+      use_lance_index: false
       datasets_dir: ${GRAPHRAG_LANCE_DATASETS}
       tables:
         Document: documents.lance

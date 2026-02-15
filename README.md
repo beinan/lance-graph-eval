@@ -183,6 +183,9 @@ python3 scripts/prepare_lance.py --dataset /path/to/dataset --from-parquet
 export GRAPHRAG_LANCE_DATASETS=/path/to/dataset/lance
 ```
 
+`prepare_lance.py` also normalizes the `embedding` column to a fixed-size float32 list and builds a Lance vector
+index for `chunks.lance` (cosine metric) so hybrid search can use native embeddings.
+
 2) Ensure the `tables` section in `configs/graphrag_eval.yaml` matches the Lance filenames.
 
 ## Notes

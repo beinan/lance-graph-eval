@@ -138,7 +138,7 @@ queries:
         vector_search:
           enabled: true
           column: "c.embedding"
-          metric: l2
+          metric: cosine
           top_k_param: top_k
           vector_param: embedding
   - name: local_search_2hop
