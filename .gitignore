@@ -7,3 +7,5 @@ datasets/raw/graphrag_bench_cs/
 datasets/graph/graphrag_bench_cs/
 datasets/kuzu_cs.db
 datasets/kuzu_cs.db.wal
+datasets/kuzu_novel.db
+datasets/kuzu_novel.db.wal
