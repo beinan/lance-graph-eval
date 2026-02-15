@@ -53,7 +53,8 @@ engines:
     kind: kuzu
     options:
       path: ${KUZU_PATH}
-      threadsafe: false
+      threadsafe: true
+      engine_pool: true
   - name: lance_graph_local
     kind: lance_graph
     options:
@@ -88,7 +89,8 @@ engines:
             src_field: src_id
             dst_field: dst_id
             from_edges: edges
-      threadsafe: false
+      threadsafe: true
+      engine_pool: true
 
 setup:
   - name: kuzu_vector

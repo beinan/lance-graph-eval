@@ -4,6 +4,7 @@ import json
 import os
 import platform
 import time
+from queue import Queue
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from typing import Dict, List, Optional
@@ -35,6 +36,35 @@ class BenchmarkReport:
     benchmark: BenchmarkSettings
     reports: List[QueryReport]
     system: Dict[str, object]
+
+
+class _EnginePool:
+    def __init__(self, engines: List[object]):
+        self._queue: Queue[object] = Queue()
+        self._size = len(engines)
+        for engine in engines:
+            self._queue.put(engine)
+
+    @property
+    def size(self) -> int:
+        return self._size
+
+    def acquire(self):
+        return self._queue.get()
+
+    def release(self, engine) -> None:
+        self._queue.put(engine)
+
+    def close(self) -> None:
+        while not self._queue.empty():
+            try:
+                engine = self._queue.get_nowait()
+            except Exception:
+                break
+            try:
+                engine.close()
+            except Exception:
+                pass
 
 
 def _rss_mb() -> Optional[float]:
@@ -195,11 +225,23 @@ class BenchmarkRunner:
     def run(self) -> BenchmarkReport:
         reports: List[QueryReport] = []
         for engine_cfg in self.engines:
-            engine = get_engine(engine_cfg.kind, engine_cfg.name, engine_cfg.options)
-            engine.connect()
+            pool = self._build_engine_pool(engine_cfg)
+            if pool is None:
+                engine = get_engine(engine_cfg.kind, engine_cfg.name, engine_cfg.options)
+                engine.connect()
+                primary_engine = engine
+            else:
+                primary_engine = pool.acquire()
 
             try:
-                self._run_setup(engine, engine_cfg)
+                # Setup runs once on the primary engine to avoid duplicate side effects.
+                if pool is None:
+                    self._run_setup(primary_engine, engine_cfg)
+                else:
+                    try:
+                        self._run_setup(primary_engine, engine_cfg)
+                    finally:
+                        pool.release(primary_engine)
                 for query in self.queries:
                     entry = query.texts.get(engine_cfg.kind)
                     if not entry:
@@ -210,10 +252,13 @@ class BenchmarkRunner:
                         query_text = entry
                     if not query_text:
                         continue
-                    report = self._run_query_suite(engine, engine_cfg, query, query_text)
+                    report = self._run_query_suite(primary_engine, pool, engine_cfg, query, query_text)
                     reports.append(report)
             finally:
-                engine.close()
+                if pool is None:
+                    primary_engine.close()
+                else:
+                    pool.close()
 
         return BenchmarkReport(
             benchmark=self.settings,
@@ -230,7 +275,14 @@ class BenchmarkRunner:
                 else:
                     engine.run_setup([text])
 
-    def _run_query_suite(self, engine, engine_cfg: EngineConfig, query: QuerySpec, query_text: str) -> QueryReport:
+    def _run_query_suite(
+        self,
+        engine,
+        pool: Optional[_EnginePool],
+        engine_cfg: EngineConfig,
+        query: QuerySpec,
+        query_text: str,
+    ) -> QueryReport:
         params = _resolve_params(query.params)
         vector_search = _select_vector_search(query, engine_cfg)
         if not query.pass_all_params and not vector_search:
@@ -239,8 +291,17 @@ class BenchmarkRunner:
             params = _apply_vector_search_params(params, vector_search)
         expect = query.expect
 
+        def _run_once():
+            if pool is None:
+                return _time_query(engine, query_text, params, query.fetch, self.settings.timeout_s, expect)
+            pooled = pool.acquire()
+            try:
+                return _time_query(pooled, query_text, params, query.fetch, self.settings.timeout_s, expect)
+            finally:
+                pool.release(pooled)
+
         for _ in range(self.settings.warmups):
-            _time_query(engine, query_text, params, query.fetch, self.settings.timeout_s, expect)
+            _run_once()
 
         samples: List[QuerySample] = []
         latencies: List[float] = []
@@ -249,12 +310,14 @@ class BenchmarkRunner:
 
         runs = self.settings.runs
         concurrency = max(1, self.settings.concurrency)
-        if not engine.threadsafe:
+        if pool is not None:
+            concurrency = min(concurrency, pool.size)
+        elif not engine.threadsafe:
             concurrency = 1
 
         if concurrency == 1:
             for _ in range(runs):
-                sample = _time_query(engine, query_text, params, query.fetch, self.settings.timeout_s, expect)
+                sample = _run_once()
                 samples.append(sample)
                 if sample.ok:
                     latencies.append(sample.duration_ms)
@@ -264,12 +327,7 @@ class BenchmarkRunner:
                     errors += 1
         else:
             with ThreadPoolExecutor(max_workers=concurrency) as executor:
-                futures = [
-                    executor.submit(
-                        _time_query, engine, query_text, params, query.fetch, self.settings.timeout_s, expect
-                    )
-                    for _ in range(runs)
-                ]
+                futures = [executor.submit(_run_once) for _ in range(runs)]
                 for future in as_completed(futures):
                     sample = future.result()
                     samples.append(sample)
@@ -290,3 +348,17 @@ class BenchmarkRunner:
             errors=errors,
             expect_failures=expect_failures,
         )
+
+    def _build_engine_pool(self, engine_cfg: EngineConfig) -> Optional[_EnginePool]:
+        options = engine_cfg.options or {}
+        if not options.get("engine_pool"):
+            return None
+        pool_size = int(options.get("pool_size") or self.settings.concurrency or 1)
+        if pool_size < 1:
+            pool_size = 1
+        engines = []
+        for _ in range(pool_size):
+            engine = get_engine(engine_cfg.kind, engine_cfg.name, options)
+            engine.connect()
+            engines.append(engine)
+        return _EnginePool(engines)
