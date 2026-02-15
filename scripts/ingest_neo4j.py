@@ -128,6 +128,7 @@ def main() -> int:
     parser.add_argument("--database", default=None)
     parser.add_argument("--dataset", required=True)
     parser.add_argument("--batch-size", type=int, default=1000)
+    parser.add_argument("--reset", action="store_true")
     parser.add_argument("--derive-has-chunk", action="store_true")
     parser.add_argument("--create-vector-index", action="store_true")
     parser.add_argument("--create-fulltext-index", action="store_true")
@@ -147,6 +148,8 @@ def main() -> int:
 
     driver = GraphDatabase.driver(args.uri, auth=(args.user, args.password))
     with driver.session(database=args.database) as session:
+        if args.reset:
+            session.run("MATCH (n) DETACH DELETE n")
         ensure_constraints(session, labels)
         create_indexes(session, args.create_vector_index, args.create_fulltext_index, args.embedding_dim)
 

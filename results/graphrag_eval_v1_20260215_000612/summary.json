@@ -1,0 +1,358 @@
+{
+  "benchmark": {
+    "name": "graphrag_eval_v1",
+    "runs": 30,
+    "warmups": 5,
+    "concurrency": 4,
+    "timeout_s": 30.0,
+    "seed": 42,
+    "output_dir": "results",
+    "metadata": {
+      "cache_policy": "warm cache after warmups; no manual cache drops",
+      "vector_dimension": 32,
+      "distance_metric": "cosine",
+      "index_params": {
+        "neo4j": {
+          "index": "vector",
+          "params": {
+            "vector.dimensions": 32,
+            "vector.similarity_function": "cosine"
+          }
+        },
+        "kuzu": {
+          "index": "hnsw",
+          "params": {
+            "m": 16,
+            "ef_construction": 200,
+            "ef_search": 100
+          }
+        },
+        "lance_graph": {
+          "index": "ivf_pq",
+          "params": {
+            "nlist": 1024,
+            "pq_m": 16,
+            "nprobe": 32
+          }
+        }
+      }
+    }
+  },
+  "system": {
+    "platform": "Linux-6.6.97+-x86_64-with-glibc2.41",
+    "python": "3.11.14",
+    "cpu_count": 96,
+    "memory_total_mb": 386939.97265625
+  },
+  "hardware": {
+    "platform": "Linux-6.6.97+-x86_64-with-glibc2.41",
+    "python": "3.11.14",
+    "cpu_count": 96,
+    "memory_total_mb": 386939.97265625
+  },
+  "reports": [
+    {
+      "engine": "neo4j_local",
+      "query": "hybrid_search",
+      "tags": [
+        "hybrid",
+        "vector",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 6.5140148081506295,
+        "stdev_ms": 4.311853353774836,
+        "min_ms": 3.841910045593977,
+        "max_ms": 18.851369968615472,
+        "p50_ms": 4.734689544420689,
+        "p95_ms": 17.771818989422172,
+        "p99_ms": 18.550668974639848
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "neo4j_local",
+      "query": "local_search_2hop",
+      "tags": [
+        "local",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 6.713165855035186,
+        "stdev_ms": 4.480139096642566,
+        "min_ms": 3.0722799710929394,
+        "max_ms": 15.878909965977073,
+        "p50_ms": 4.4015199528075755,
+        "p95_ms": 15.119560027960684,
+        "p99_ms": 15.759824357228354
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "neo4j_local",
+      "query": "parent_child_enrichment",
+      "tags": [
+        "context",
+        "parent"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 5.4902054951526225,
+        "stdev_ms": 2.466234892469823,
+        "min_ms": 3.2637399854138494,
+        "max_ms": 11.014049989171326,
+        "p50_ms": 4.314924997743219,
+        "p95_ms": 10.120338533306494,
+        "p99_ms": 10.816638024989516
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "neo4j_local",
+      "query": "global_search",
+      "tags": [
+        "global",
+        "aggregation"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 3.854850303226461,
+        "stdev_ms": 1.1988737922636208,
+        "min_ms": 2.338910009711981,
+        "max_ms": 7.350340019911528,
+        "p50_ms": 3.404819988645613,
+        "p95_ms": 5.992127524223178,
+        "p99_ms": 6.994570915121586
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "neo4j_local",
+      "query": "deep_traversal_5hop",
+      "tags": [
+        "deep",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 29.620118303379666,
+        "stdev_ms": 4.251024888303874,
+        "min_ms": 26.22026891913265,
+        "max_ms": 43.311338988132775,
+        "p50_ms": 27.537099027540535,
+        "p95_ms": 37.609460967360064,
+        "p99_ms": 41.722605880349874
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "kuzu_local",
+      "query": "hybrid_search",
+      "tags": [
+        "hybrid",
+        "vector",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 2.223304391372949,
+        "stdev_ms": 0.8075397215832659,
+        "min_ms": 1.5885800821706653,
+        "max_ms": 4.035239922814071,
+        "p50_ms": 1.806335465516895,
+        "p95_ms": 3.8313549826852977,
+        "p99_ms": 3.9787885453552008
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "kuzu_local",
+      "query": "local_search_2hop",
+      "tags": [
+        "local",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 6.081847501142572,
+        "stdev_ms": 0.9698182255590522,
+        "min_ms": 4.32091997936368,
+        "max_ms": 8.43459996394813,
+        "p50_ms": 6.517085013911128,
+        "p95_ms": 6.962750479578972,
+        "p99_ms": 8.008821962866934
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "kuzu_local",
+      "query": "parent_child_enrichment",
+      "tags": [
+        "context",
+        "parent"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 2.161231633120527,
+        "stdev_ms": 0.9700994400548196,
+        "min_ms": 1.1854999465867877,
+        "max_ms": 4.075339995324612,
+        "p50_ms": 1.6287349862977862,
+        "p95_ms": 3.4161569725256413,
+        "p99_ms": 3.888852606760339
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "kuzu_local",
+      "query": "global_search",
+      "tags": [
+        "global",
+        "aggregation"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 2.85702603093038,
+        "stdev_ms": 1.0101686267698553,
+        "min_ms": 1.315228990279138,
+        "max_ms": 5.432649981230497,
+        "p50_ms": 3.173110482748598,
+        "p95_ms": 3.8172939734067763,
+        "p99_ms": 4.976735180243851
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "kuzu_local",
+      "query": "deep_traversal_5hop",
+      "tags": [
+        "deep",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 26.857158976296585,
+        "stdev_ms": 1.70660321603347,
+        "min_ms": 23.50675908382982,
+        "max_ms": 30.974969966337085,
+        "p50_ms": 26.719729008618742,
+        "p95_ms": 29.666897526476532,
+        "p99_ms": 30.694386246614158
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "lance_graph_local",
+      "query": "hybrid_search",
+      "tags": [
+        "hybrid",
+        "vector",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 0.9886816376820207,
+        "stdev_ms": 0.020653508923030358,
+        "min_ms": 0.9645200334489346,
+        "max_ms": 1.029559993185103,
+        "p50_ms": 0.9842994622886181,
+        "p95_ms": 1.0228465136606246,
+        "p99_ms": 1.029104699846357
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "lance_graph_local",
+      "query": "local_search_2hop",
+      "tags": [
+        "local",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 2.7977730069930353,
+        "stdev_ms": 0.17888364432793877,
+        "min_ms": 2.5105299428105354,
+        "max_ms": 3.478831029497087,
+        "p50_ms": 2.768975042272359,
+        "p95_ms": 3.0868824978824696,
+        "p99_ms": 3.402847851393745
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "lance_graph_local",
+      "query": "parent_child_enrichment",
+      "tags": [
+        "context",
+        "parent"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 1.6478412668220699,
+        "stdev_ms": 0.08313789033850347,
+        "min_ms": 1.436389982700348,
+        "max_ms": 1.82271096855402,
+        "p50_ms": 1.65382499108091,
+        "p95_ms": 1.7654885130468756,
+        "p99_ms": 1.8104581895750016
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "lance_graph_local",
+      "query": "global_search",
+      "tags": [
+        "global",
+        "aggregation"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 0.8879822989304861,
+        "stdev_ms": 0.07315720438309867,
+        "min_ms": 0.8024399867281318,
+        "max_ms": 1.0966999689117074,
+        "p50_ms": 0.8614800754003227,
+        "p95_ms": 1.0686869907658547,
+        "p99_ms": 1.0915176733396947
+      },
+      "errors": 0,
+      "expect_failures": 0
+    },
+    {
+      "engine": "lance_graph_local",
+      "query": "deep_traversal_5hop",
+      "tags": [
+        "deep",
+        "traversal"
+      ],
+      "stats": {
+        "count": 30,
+        "mean_ms": 13.239574040441463,
+        "stdev_ms": 0.3903813526704819,
+        "min_ms": 12.599520036019385,
+        "max_ms": 14.415360055863857,
+        "p50_ms": 13.209884986281395,
+        "p95_ms": 13.966950972098857,
+        "p99_ms": 14.300658949650824
+      },
+      "errors": 0,
+      "expect_failures": 0
+    }
+  ]
+}

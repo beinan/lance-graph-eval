@@ -99,6 +99,7 @@ for CORES in "${CORES_LIST[@]}"; do
       --password "$NEO4J_PASSWORD_VAL" \
       --database "$NEO4J_DATABASE_VAL" \
       --dataset "$CONTAINER_DATASET_DIR" \
+      --reset \
       --embedding-dim 32 \
       --create-vector-index \
       --create-fulltext-index
