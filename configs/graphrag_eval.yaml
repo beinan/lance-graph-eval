@@ -96,6 +96,7 @@ setup:
   - name: kuzu_vector
     per_engine:
       kuzu:
+        - "INSTALL VECTOR;"
         - "LOAD VECTOR;"
         - "CALL CREATE_VECTOR_INDEX('Chunk', 'chunk_embedding', 'embedding', metric := 'cosine');"
   - name: vector_index
