@@ -26,7 +26,14 @@ def main() -> int:
         return 0
 
     out_base = args.out or config.benchmark.output_dir
-    out_dir = ensure_output_dir(out_base, config.benchmark.name)
+    metadata = config.benchmark.metadata or {}
+    dataset_name = (
+        metadata.get("dataset_name")
+        or metadata.get("dataset")
+        or os.getenv("GRAPHRAG_DATASET_NAME")
+        or os.getenv("DATASET_FLAVOR")
+    )
+    out_dir = ensure_output_dir(out_base, config.benchmark.name, dataset_name)
 
     runner = BenchmarkRunner(
         settings=config.benchmark,

@@ -14,8 +14,11 @@ def _timestamp() -> str:
     return datetime.utcnow().strftime("%Y%m%d_%H%M%S")
 
 
-def ensure_output_dir(base_dir: str, benchmark_name: str) -> str:
-    path = os.path.join(base_dir, f"{benchmark_name}_{_timestamp()}")
+def ensure_output_dir(base_dir: str, benchmark_name: str, dataset_name: str | None = None) -> str:
+    if dataset_name:
+        path = os.path.join(base_dir, f"{benchmark_name}_{dataset_name}_{_timestamp()}")
+    else:
+        path = os.path.join(base_dir, f"{benchmark_name}_{_timestamp()}")
     os.makedirs(path, exist_ok=True)
     return path
 
