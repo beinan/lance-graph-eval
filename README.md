@@ -174,16 +174,16 @@ Kuzu (row-wise, slower but simple):
 python3 scripts/ingest_kuzu.py --db /path/to/kuzu.db --dataset /path/to/dataset --derive-has-chunk
 ```
 
-Lance-graph (datasets mode):
+Lance-graph (lance datasets mode):
 
-1) Convert JSONL to Parquet:
+1) Convert JSONL or Parquet to Lance datasets:
 
 ```bash
-python3 scripts/ingest_lance_graph.py --dataset /path/to/dataset
-export GRAPHRAG_LANCE_DATASETS=/path/to/dataset/parquet
+python3 scripts/prepare_lance.py --dataset /path/to/dataset --from-parquet
+export GRAPHRAG_LANCE_DATASETS=/path/to/dataset/lance
 ```
 
-2) Ensure the `tables` section in `configs/graphrag_eval.yaml` matches the Parquet filenames.
+2) Ensure the `tables` section in `configs/graphrag_eval.yaml` matches the Lance filenames.
 
 ## Notes
 

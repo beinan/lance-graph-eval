@@ -59,14 +59,14 @@ engines:
   - name: lance_graph_local
     kind: lance_graph
     options:
-      mode: datasets
+      mode: lance
       datasets_dir: ${GRAPHRAG_LANCE_DATASETS}
       tables:
-        Document: documents.parquet
-        Chunk: chunks.parquet
-        Entity: entities.parquet
-        Community: communities.parquet
-        edges: edges.parquet
+        Document: documents.lance
+        Chunk: chunks.lance
+        Entity: entities.lance
+        Community: communities.lance
+        edges: edges.lance
       graph:
         nodes:
           - label: Document

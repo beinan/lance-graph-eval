@@ -49,7 +49,7 @@ class LanceGraphEngine(BaseEngine):
             self._knowledge_graph = LanceKnowledgeGraph(config, store)
             return None
 
-        if self._mode == "datasets":
+        if self._mode in ("datasets", "lance"):
             try:
                 import pyarrow as pa
                 import pyarrow.compute as pc
@@ -70,6 +70,13 @@ class LanceGraphEngine(BaseEngine):
             self._pa = pa
             self._pc = pc
             self._pq = pq
+            self._lance = None
+            if self._mode == "lance":
+                try:
+                    import lance
+                except ImportError as exc:
+                    raise RuntimeError("lance not installed. Run: pip install lance") from exc
+                self._lance = lance
 
             self._graph_config = self._build_graph_config(self._graph_spec)
             self._datasets = self._load_datasets()
@@ -87,7 +94,7 @@ class LanceGraphEngine(BaseEngine):
             return self._run_cli(query_text, params, fetch)
         if self._mode == "knowledge_graph":
             return self._run_knowledge_graph(query_text, params, fetch)
-        if self._mode == "datasets":
+        if self._mode in ("datasets", "lance"):
             return self._run_datasets(query_text, params, fetch)
 
         raise ValueError(f"Unsupported lance_graph mode: {self._mode}")
@@ -193,7 +200,13 @@ class LanceGraphEngine(BaseEngine):
         path = self._resolve_table_path(key)
         if not os.path.exists(path):
             raise FileNotFoundError(f"Table not found: {path}")
-        table = self._pq.read_table(path)
+        if self._mode == "lance":
+            if self._lance is None:
+                raise RuntimeError("lance not initialized")
+            dataset = self._lance.dataset(path)
+            table = dataset.to_table()
+        else:
+            table = self._pq.read_table(path)
         return self._maybe_cast_embeddings(table)
 
     def _maybe_cast_embeddings(self, table):
@@ -213,8 +226,9 @@ class LanceGraphEngine(BaseEngine):
         if os.path.isabs(key):
             return key
         if self._datasets_dir:
-            return os.path.join(self._datasets_dir, f"{key}.parquet")
-        return f"{key}.parquet"
+            suffix = "lance" if self._mode == "lance" else "parquet"
+            return os.path.join(self._datasets_dir, f"{key}.{suffix}")
+        return f"{key}.lance" if self._mode == "lance" else f"{key}.parquet"
 
     def _filter_edges(self, table, type_field: str, rel_name: str):
         if type_field not in table.schema.names:
