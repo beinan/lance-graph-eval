@@ -1,0 +1,13 @@
+engine,query,tags,platform,python,cpu_count,memory_total_mb,count,mean_ms,stdev_ms,min_ms,max_ms,p50_ms,p95_ms,p99_ms,errors,expect_failures
+neo4j_local,hybrid_search,"hybrid,vector,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,4.175,2.960,2.257,14.237,3.362,11.880,13.561,0,0
+neo4j_local,local_search_2hop,"local,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,3.759,0.772,3.100,6.334,3.489,5.592,6.327,0,0
+neo4j_local,global_search,"global,aggregation",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,3.473,0.777,2.102,5.032,3.528,4.861,4.986,0,0
+neo4j_local,deep_traversal_5hop,"deep,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,70.685,1.390,68.445,74.212,70.422,72.623,73.769,0,0
+kuzu_local,hybrid_search,"hybrid,vector,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,2.192,0.839,1.586,4.290,1.871,4.239,4.283,0,0
+kuzu_local,local_search_2hop,"local,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,6.922,1.130,3.872,10.247,7.261,7.740,9.522,0,0
+kuzu_local,global_search,"global,aggregation",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,2.384,1.349,1.326,6.383,1.449,3.979,5.707,0,0
+kuzu_local,deep_traversal_5hop,"deep,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,167.304,6.721,157.540,192.550,167.363,175.356,188.131,0,0
+lance_graph_local,hybrid_search,"hybrid,vector,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,1.836,0.018,1.794,1.873,1.833,1.865,1.872,0,0
+lance_graph_local,local_search_2hop,"local,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,4.477,0.137,4.153,4.684,4.481,4.670,4.680,0,0
+lance_graph_local,global_search,"global,aggregation",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,1.292,0.041,1.218,1.377,1.295,1.352,1.371,0,0
+lance_graph_local,deep_traversal_5hop,"deep,traversal",Linux-6.6.97+-x86_64-with-glibc2.36,3.11.2,96,386939.973,30,36.184,2.791,32.848,49.081,35.683,37.962,45.901,0,0

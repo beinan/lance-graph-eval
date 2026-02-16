@@ -65,8 +65,8 @@ class LanceGraphEngine(BaseEngine):
                 from lance_graph import CypherEngine, GraphConfig  # type: ignore
             except ImportError as exc:
                 raise RuntimeError(
-                    "lance-graph v0.5.2+ with CypherEngine is required. "
-                    "Run: pip install lance-graph==0.5.2"
+                    "lance-graph v0.5.3+ with CypherEngine is required. "
+                    "Run: pip install lance-graph==0.5.3"
                 ) from exc
 
             self._CypherEngine = CypherEngine
@@ -336,8 +336,8 @@ class LanceGraphEngine(BaseEngine):
             from lance_graph import CypherQuery, VectorSearch, DistanceMetric  # type: ignore
         except ImportError as exc:
             raise RuntimeError(
-                "lance-graph v0.5.2+ with CypherQuery is required. "
-                "Run: pip install lance-graph==0.5.2"
+                "lance-graph v0.5.3+ with CypherQuery is required. "
+                "Run: pip install lance-graph==0.5.3"
             ) from exc
 
         query_vec = params.get("embedding")
@@ -373,13 +373,17 @@ class LanceGraphEngine(BaseEngine):
                     )
         if self._mode == "lance" and self.options.get("use_lance_index", True):
             return self._execute_with_lance_index(rendered, params, metric_name)
-        query = CypherQuery(rendered).with_config(self._graph_config)
         vector_search = (
             VectorSearch(vector_column)
             .query_vector([float(v) for v in query_vec])
             .metric(metric)
             .top_k(top_k)
         )
+        engine = self._engine
+        if engine is not None and hasattr(engine, "execute_with_vector_rerank"):
+            return engine.execute_with_vector_rerank(rendered, vector_search)
+
+        query = CypherQuery(rendered).with_config(self._graph_config)
         return query.execute_with_vector_rerank(self._datasets, vector_search)
 
     def _execute_with_lance_index(self, rendered: str, params: Dict[str, Any], metric_name: str):

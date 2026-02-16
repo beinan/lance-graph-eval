@@ -162,35 +162,6 @@ queries:
         MATCH (c:Chunk)-[:MENTIONS]->(e:Entity {name: $entity_name})
         MATCH (c)-[:PARENT_OF]->(d:Document)
         RETURN count(*) AS n
-  - name: parent_child_enrichment
-    tags: [context, parent]
-    params:
-      embedding_file: ${EMBEDDING_JSON}
-      top_k: 25
-    expect:
-      min_rows: 1
-    fetch: scalar
-    texts:
-      neo4j: |
-        CALL db.index.vector.queryNodes('chunk_embedding', $top_k, $embedding)
-        YIELD node
-        MATCH (node)-[:PARENT_OF]->(p:Document)
-        RETURN count(*) AS n
-      kuzu: |
-        CALL QUERY_VECTOR_INDEX('Chunk', 'chunk_embedding', $embedding, $top_k)
-        YIELD node, distance
-        MATCH (node)-[:PARENT_OF]->(p:Document)
-        RETURN count(*) AS n
-      lance_graph:
-        query: |
-          MATCH (c:Chunk)-[:PARENT_OF]->(p:Document)
-          RETURN c.id, c.embedding, p.id
-        vector_search:
-          enabled: true
-          column: "c.embedding"
-          metric: cosine
-          top_k_param: top_k
-          vector_param: embedding
   - name: global_search
     tags: [global, aggregation]
     params:

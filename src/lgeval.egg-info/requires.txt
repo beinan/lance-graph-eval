@@ -3,7 +3,7 @@ pyyaml>=6.0
 [all]
 neo4j==6.1.0
 kuzu==0.11.3
-lance-graph==0.5.2
+lance-graph==0.5.3
 psutil==7.2.2
 pyarrow==23.0.0
 
@@ -17,7 +17,7 @@ pyarrow==23.0.0
 kuzu==0.11.3
 
 [lance_graph]
-lance-graph==0.5.2
+lance-graph==0.5.3
 pyarrow==23.0.0
 
 [neo4j]

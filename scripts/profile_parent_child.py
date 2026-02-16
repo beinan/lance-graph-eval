@@ -51,7 +51,7 @@ def main() -> int:
     try:
         from lance_graph import CypherQuery, VectorSearch, DistanceMetric  # type: ignore
     except ImportError as exc:
-        raise SystemExit("lance-graph v0.5.2+ required.") from exc
+        raise SystemExit("lance-graph v0.5.3+ required.") from exc
 
     datasets = engine._datasets
     graph_config = engine._graph_config
